@@ -1,13 +1,12 @@
 package com.example.communication.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.example.communication.dto.AccessTokenDto;
 import com.example.communication.dto.GithubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+
 
 @Component
 public class GitHubProvider {
