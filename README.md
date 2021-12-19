@@ -10,7 +10,13 @@
 [fastJason参考资料]https://www.cjavapy.com/article/133/
 
 [okHttp参考资料]https://square.github.io/okhttp/
-session:银行账户 cookie:银行卡 浏览器：你 服务器：银行
+
+[session和cookie类比]session:银行账户 cookie:银行卡 浏览器：你 服务器：银行
+
+[Mysql数据库基本知识]https://www.runoob.com/mysql/mysql-tutorial.html
+
+
+## 注意事项
 redirect 跳转到路径地址
 
 
