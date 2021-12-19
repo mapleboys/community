@@ -10,6 +10,7 @@
 [fastJason参考资料]https://www.cjavapy.com/article/133/
 
 [okHttp参考资料]https://square.github.io/okhttp/
+session:银行账户 cookie:银行卡 浏览器：你 服务器：银行
 
 
 
