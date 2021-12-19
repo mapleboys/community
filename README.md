@@ -11,7 +11,7 @@
 
 [okHttp参考资料]https://square.github.io/okhttp/
 session:银行账户 cookie:银行卡 浏览器：你 服务器：银行
-
+redirect 跳转到路径地址
 
 
 ## 工具
