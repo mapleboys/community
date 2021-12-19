@@ -15,6 +15,9 @@
 
 [Mysql数据库基本知识]https://www.runoob.com/mysql/mysql-tutorial.html
 
+[dbeaver链接h2数据库]https://www.cnblogs.com/wang-liang-blogs/p/12123626.html
+
+[myBatis]
 
 ## 注意事项
 redirect 跳转到路径地址
