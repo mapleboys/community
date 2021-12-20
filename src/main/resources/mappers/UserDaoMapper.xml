@@ -10,6 +10,7 @@
 
     <!--插入数据-->
     <insert id="insertUser" parameterType="com.example.communication.model.User">
-        INSERT INTO user(account_id,name,token,gmt_create,gmt_modified) VALUES (#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified});
+        insert into public.users(account_id, name, token, gmt_create, gmt_modified) values
+        (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified});
     </insert>
 </mapper>
