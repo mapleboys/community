@@ -1,10 +1,12 @@
 package com.example.communication.controller;
 
+import com.example.communication.dao.UserDao;
 import com.example.communication.dto.AccessTokenDto;
 import com.example.communication.dto.GithubUser;
-import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.User;
 import com.example.communication.provider.GitHubProvider;
+import com.example.communication.util.MybatisUtils;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -28,8 +30,11 @@ public class AuthorizeController {
     @Value("${github.redirect.uri}")
     private String redirectUri;
 
-    @Autowired
-    private UserMapper userMapper;
+
+//
+//    @Autowired
+//    private UserMapper userMapper;
+
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
@@ -42,6 +47,15 @@ public class AuthorizeController {
         accessTokenDto.setClient_secret(clientSecret);
         String accessToken = gitHubProvider.getAccessToken(accessTokenDto);
         GithubUser githubUser = gitHubProvider.getUser(accessToken);
+        UserDao userdao = null;
+        try {
+            SqlSession sqlSession = MybatisUtils.getSqlseesion();
+            userdao = sqlSession.getMapper(UserDao.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
         if (githubUser != null) {
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
@@ -49,7 +63,8 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
-            userMapper.insert(user);
+            System.out.println(user);
+            userdao.insertUser(user);
             //登录成功，写cookie和session
             request.getSession().setAttribute("user", githubUser);
             return "redirect:/";
