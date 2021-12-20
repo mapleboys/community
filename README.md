@@ -17,7 +17,9 @@
 
 [dbeaver链接h2数据库]https://www.cnblogs.com/wang-liang-blogs/p/12123626.html
 
-[myBatis]
+[myBatis实战]https://www.cnblogs.com/diffx/p/10611082.html
+
+[myBatis官网]https://mybatis.org/mybatis-3/zh/getting-started.html
 
 ## 注意事项
 redirect 跳转到路径地址
