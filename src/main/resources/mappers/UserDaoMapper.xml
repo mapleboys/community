@@ -10,8 +10,8 @@
 
     <!--插入数据-->
     <insert id="insertUser" parameterType="com.example.communication.model.User">
-        insert into users(account_id, name, token, gmt_create, gmt_modified) values
-        (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified});
+        insert into users(account_id, name, token, gmt_create, gmt_modified, bio) values
+        (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified}, #{bio});
     </insert>
 
     <!--查询数据-->
@@ -26,7 +26,8 @@
         t.name as name,
         t.token as token,
         t.gmt_create as gmtCreate,
-        t.gmt_modified as gmtModified from users t where token = #{token};
+        t.gmt_modified as gmtModified,
+        t.bio as bio from users t where token = #{token};
     </select>
 
 </mapper>

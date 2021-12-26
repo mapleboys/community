@@ -7,6 +7,7 @@ public class User {
     private String token;
     private Long gmtCreate;
     private Long gmtModified;
+    private String bio;
 
     public Integer getId() {
         return id;
@@ -22,6 +23,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 
     public String getAccountId() {
@@ -65,6 +74,7 @@ public class User {
                 ", token='" + token + '\'' +
                 ", gmtCreate=" + gmtCreate +
                 ", gmtModified=" + gmtModified +
+                ", bio='" + bio + '\'' +
                 '}';
     }
 }
