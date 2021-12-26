@@ -12,4 +12,9 @@ public interface UserDao {
      */
     public void insertUser(User user);
 
+    /**
+     * 查询用户
+     *
+     */
+    public List<User> queryUserAll();
 }

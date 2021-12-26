@@ -18,4 +18,9 @@ public class UserDaoImpl implements UserDao {
         this.sqlSession.insert("UserDao.insertUser", user);
     }
 
+    @Override
+    public List<User> queryUserAll() {
+        return this.sqlSession.selectList("UserDao.selectUser");
+    }
+
 }

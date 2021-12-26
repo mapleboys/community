@@ -10,7 +10,12 @@
 
     <!--插入数据-->
     <insert id="insertUser" parameterType="com.example.communication.model.User">
-        insert into public.users(account_id, name, token, gmt_create, gmt_modified) values
+        insert into users(account_id, name, token, gmt_create, gmt_modified) values
         (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified});
     </insert>
+
+    <!--查询数据-->
+    <select id="queryUserAll" resultType="com.example.communication.model.User">
+        select * from users;
+    </select>
 </mapper>

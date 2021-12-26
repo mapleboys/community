@@ -21,6 +21,17 @@
 
 [myBatis官网]https://mybatis.org/mybatis-3/zh/getting-started.html
 
+[调整日志为debug级别]
+1. 配置所有包下日志为DEBUG级别
+1.1 properties配置
+logging.level.root=DEBUG
+
+2. 配置固定的包
+2.1 properties配置
+logging.level.你的包名.你的包名.你的包名=DEBUG
+例如你的包名是 com.baidu , 就要写为
+logging.level.com.baidu=DEBUG
+
 ## 注意事项
 redirect 跳转到路径地址
 
