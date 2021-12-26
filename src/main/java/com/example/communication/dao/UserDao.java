@@ -17,4 +17,10 @@ public interface UserDao {
      *
      */
     public List<User> queryUserAll();
+
+    /**
+     * 根据token查询用户
+     *
+     */
+    public User queryUserByToken(String token);
 }

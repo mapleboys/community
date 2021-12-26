@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,7 +37,8 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
-                           HttpServletRequest request) {
+                           HttpServletRequest request,
+                           HttpServletResponse response) {
         AccessTokenDto accessTokenDto = new AccessTokenDto();
         accessTokenDto.setClient_id(clientId);
         accessTokenDto.setCode(code);
@@ -50,30 +53,16 @@ public class AuthorizeController {
         System.out.println(userdao.toString());
         if (githubUser != null) {
             User user = new User();
-            user.setToken(UUID.randomUUID().toString());
+            String token = UUID.randomUUID().toString();
+            user.setToken(token);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             System.out.println(user);
-            try {
-                userdao.insertUser(user);
-                sqlSession.commit();
-            } catch (Exception e2) {
-                e2.printStackTrace();
-                System.out.println(e2.getMessage());
-            }
-
-            System.out.println("开始查询");
-
-            try {
-                List<User> userList = userdao.queryUserAll();
-                System.out.println(userList.get(0).toString());
-            } catch (Exception e3) {
-                e3.printStackTrace();
-                System.out.println(e3.getMessage());
-            }
-
+            userdao.insertUser(user);
+            sqlSession.commit();
+            response.addCookie(new Cookie("token", token));
             //登录成功，写cookie和session
             request.getSession().setAttribute("user", githubUser);
             return "redirect:/";

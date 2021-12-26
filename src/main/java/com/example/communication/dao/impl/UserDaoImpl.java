@@ -20,7 +20,12 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> queryUserAll() {
-        return this.sqlSession.selectList("UserDao.selectUser");
+        return this.sqlSession.selectList("UserDao.queryUserAll");
+    }
+
+    @Override
+    public User queryUserByToken(String token) {
+        return (User)this.sqlSession.selectOne("UserDao.queryUserByToken", token);
     }
 
 }

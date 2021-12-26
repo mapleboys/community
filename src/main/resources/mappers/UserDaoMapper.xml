@@ -18,4 +18,15 @@
     <select id="queryUserAll" resultType="com.example.communication.model.User">
         select * from users;
     </select>
+
+    <!--根据token查询数据-->
+    <select id="queryUserByToken" resultType="com.example.communication.model.User">
+        select t.id as id,
+        t.account_id as accountId,
+        t.name as name,
+        t.token as token,
+        t.gmt_create as gmtCreate,
+        t.gmt_modified as gmtModified from users t where token = #{token};
+    </select>
+
 </mapper>
