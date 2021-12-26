@@ -39,8 +39,17 @@ redirect 跳转到路径地址
 ## 工具
 [git工具]http://git-scm.com/
 
-<<<<<<< HEAD
 [bootcss前端工具]https://v3.bootcss.com/css/
-=======
-[bootcss前端工具]https://v3.bootcss.com/css/
->>>>>>> 6929749897e5971e63b5bc76dd44516243eca601
+
+## 脚本
+```sql
+CREATE TABLE users (
+  id int NOT NULL AUTO_INCREMENT,
+  account_id varchar(100) DEFAULT NULL,
+  name varchar(50) DEFAULT NULL,
+  token char(36) DEFAULT NULL,
+  gmt_create bigint DEFAULT NULL,
+  gmt_modified bigint DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='登录人员信息表'
+```
