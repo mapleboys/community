@@ -24,9 +24,10 @@
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li th:if = "${session.user == null}">
-                    <a href="https://github.com/login/oauth/authorize?client_id=2bcd63e763491ab33831&redirect_uri=http://localhost:8887/callback&scope=user&state=0839">登录</a>
+                <li th:if = "${session.user != null}">
+                    <a href = "/publish">发布</a>
                 </li>
+
                 <li class="dropdown" th:if = "${session.user != null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false" th:text = "${session.user.getName()}"><span class="caret"></span></a>
@@ -36,6 +37,9 @@
                         <li><a href="#">退出登录</a></li>
                     </ul>
                 </li>
+                <li th:if = "${session.user == null}">
+                    <a href="https://github.com/login/oauth/authorize?client_id=2bcd63e763491ab33831&redirect_uri=http://localhost:8887/callback&scope=user&state=0839">登录</a>
+                </li>
 
             </ul>
         </div>
@@ -43,28 +47,33 @@
 </nav>
 <div class="container-fluid main" style ="background-color:white;margin:30px">
     <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-" >
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" >
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发起</h2>
             <hr>
-            <form action="/publish" method="post">
+            <form action="/doPublish" method="post">
                 <div class="form-group">
                     <label for="title">问题标题（简单扼要）:</label>
-                    <input type="text" class="form-control" id="title" name = "title" placeholder="问题标题...">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name = "title" placeholder="问题标题...">
                 </div>
                 <div class="form-group">
                     <label for="title">问题补充（必填，请参照右侧提示）：</label>
-                    <textarea name="description" id= "description" class="form-control" cols="30"
+                    <textarea name="description" th:value="${description}" id= "description" class="form-control" cols="30"
                               rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="title">添加标签</label>
-                    <input type="text" class="form-control" id="tag" name = "tag" placeholder="输入标签,以,分割">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name = "tag" placeholder="输入标签,以,分割">
                 </div>
-                <span class="alert alert-danger" th:text="${error}"></span>
-                <button type="button" class="btn btn-success" style="float:right;margin-bottom:15px">发布</button>
+                <div class="container-fluid main" style ="background-color:white">
+                    <div class="row">
+                        <div th:if = "${error != null}" class="alert alert-danger col-lg-9 col-md-9 col-sm-12 col-xs-12" th:text="${error}"></div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-success btn-publish">发布</button>
+                        </div>
+                    </div></div>
             </form>
         </div>
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-" >
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
             <h3>问题发起指南</h3>
             <ol>
                 <li>问题标题：请用简洁的语言描述您发布的问题，不超过25字</li>

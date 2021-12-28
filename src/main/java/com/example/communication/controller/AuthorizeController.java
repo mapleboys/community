@@ -50,8 +50,7 @@ public class AuthorizeController {
         SqlSession sqlSession = MybatisUtils.getSqlseesion();
         userdao = sqlSession.getMapper(UserDao.class);
 
-        System.out.println(userdao.toString());
-        if (githubUser != null) {
+        if (githubUser != null && !String.valueOf(githubUser.getId()).equals("0")) {
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);

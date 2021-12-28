@@ -10,7 +10,7 @@
 
     <!--插入数据-->
     <insert id="insertQuestion" parameterType="com.example.communication.model.Question">
-        insert into users(
+        insert into question(
         title,
         description,
         gmt_create,
