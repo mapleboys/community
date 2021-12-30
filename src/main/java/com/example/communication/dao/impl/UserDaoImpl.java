@@ -28,4 +28,9 @@ public class UserDaoImpl implements UserDao {
         return (User)this.sqlSession.selectOne("UserDao.queryUserByToken", token);
     }
 
+    @Override
+    public User queryUserById(Integer id) {
+        return (User)this.sqlSession.selectOne("UserDao.queryUserById", id);
+    }
+
 }

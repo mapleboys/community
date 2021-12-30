@@ -4,6 +4,8 @@ import com.example.communication.dao.QuestionDao;
 import com.example.communication.model.Question;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.List;
+
 public class QuestionDaoImpl implements QuestionDao {
     public SqlSession sqlSession;
 
@@ -14,5 +16,10 @@ public class QuestionDaoImpl implements QuestionDao {
     @Override
     public void insertQuestion(Question question) {
         this.sqlSession.insert("QuestionDao.insertQuestion", question);
+    }
+
+    @Override
+    public List<Question> queryQuestionAll() {
+        return this.sqlSession.selectList("QuestionDao.queryQuestionAll");
     }
 }

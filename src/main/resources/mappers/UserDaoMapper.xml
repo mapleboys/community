@@ -31,4 +31,16 @@
         t.bio as bio from users t where token = #{token};
     </select>
 
+    <!--根据id查询数据-->
+    <select id="queryUserById" resultType="com.example.communication.model.User">
+        select t.id as id,
+        t.avatar_url as avatarUrl,
+        t.account_id as accountId,
+        t.name as name,
+        t.token as token,
+        t.gmt_create as gmtCreate,
+        t.gmt_modified as gmtModified,
+        t.bio as bio from users t where id = #{id};
+    </select>
+
 </mapper>

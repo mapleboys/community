@@ -23,4 +23,10 @@ public interface UserDao {
      *
      */
     public User queryUserByToken(String token);
+
+    /**
+     * 根据id查询用户
+     *
+     */
+    public User queryUserById(Integer id);
 }
