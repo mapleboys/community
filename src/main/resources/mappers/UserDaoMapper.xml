@@ -10,8 +10,8 @@
 
     <!--插入数据-->
     <insert id="insertUser" parameterType="com.example.communication.model.User">
-        insert into users(account_id, name, token, gmt_create, gmt_modified, bio) values
-        (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified}, #{bio});
+        insert into users(account_id, name, token, gmt_create, gmt_modified, bio, avatar_url) values
+        (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified}, #{bio}, #{avatarUrl});
     </insert>
 
     <!--查询数据-->
@@ -22,6 +22,7 @@
     <!--根据token查询数据-->
     <select id="queryUserByToken" resultType="com.example.communication.model.User">
         select t.id as id,
+        t.avatar_url as avatarUrl,
         t.account_id as accountId,
         t.name as name,
         t.token as token,

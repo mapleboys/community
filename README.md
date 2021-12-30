@@ -21,6 +21,8 @@
 
 [myBatis官网]https://mybatis.org/mybatis-3/zh/getting-started.html
 
+[lombok官网]https://projectlombok.org/features/all 需要安装插件和引入依赖来使用
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
