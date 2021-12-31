@@ -42,7 +42,7 @@ redirect 跳转到路径地址
 
 ## 工具
 [git工具]http://git-scm.com/
-
+[register快捷键]shift+ctrl+alt+?
 [bootcss前端工具]https://v3.bootcss.com/css/
 
 ## 脚本
