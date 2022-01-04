@@ -8,8 +8,8 @@ public class User {
     private String name;
     private String accountId;
     private String token;
-    private String gmtCreate;
-    private String gmtModified;
+    private Long gmtCreate;
+    private Long gmtModified;
     private String bio;
     private String avatarUrl;
 }

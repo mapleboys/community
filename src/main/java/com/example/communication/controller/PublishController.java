@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 @Controller
 public class PublishController {
@@ -86,7 +85,10 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
-        question.setGmtCreate(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS")));
+        question.setCommentAccount(0);
+        question.setLikeAccount(0);
+        question.setViewAccount(0);
+        question.setGmtCreate(System.currentTimeMillis());
         question.setGmtModified(question.getGmtCreate());
 
         questionDao.insertQuestion(question);

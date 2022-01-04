@@ -26,7 +26,7 @@ public class QuestionDtoService {
             User user = userDao.queryUserById(creator);
             QuestionDto questionDto = new QuestionDto();
             BeanUtils.copyProperties(question,questionDto);
-            questionDto.setCreator(creator);
+            questionDto.setUser(user);
             questionDtos.add(questionDto);
         }
         return questionDtos;
