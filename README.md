@@ -25,6 +25,9 @@
 
 [模板完整]https://elasticsearch.cn/category-18
 
+[devtools热部署工具]https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools配合live Reload
+
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
