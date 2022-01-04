@@ -8,5 +8,6 @@ public class PaginationDto {
     private boolean showNextPage;   //后一页
     private boolean showEndPage;    // 最后一页
     private boolean showFirstPage;  //第一页
-    private List<String> pages; //页码
+    private List<String> pageList; //显示的所有页码
+    private Integer currentPage;    //当前页码
 }

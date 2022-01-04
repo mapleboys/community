@@ -27,6 +27,7 @@
 
 [devtools热部署工具]https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.devtools配合live Reload
 
+[解决flyway命令报错]https://blog.csdn.net/lejustdoit/article/details/107574971
 
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
@@ -59,4 +60,19 @@ CREATE TABLE users (
   gmt_modified bigint DEFAULT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='登录人员信息表'
+```
+
+```sql
+CREATE TABLE PUBLIC.question(
+id int auto_increment PRIMARY KEY,
+titile varchar(50),
+description text,
+gmt_create bigint,
+gmt_modified bigint,
+creator integer,
+comment_account integer,
+view_account integer,
+like_account integer,
+tag varchar(200)
+)
 ```
