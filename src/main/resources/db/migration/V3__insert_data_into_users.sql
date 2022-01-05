@@ -1,0 +1,2 @@
+INSERT INTO community.users (account_id,name,token,gmt_create,gmt_modified,bio,avatar_url) VALUES
+('29704671','新人石头','0de31141-b7fe-44a6-96d7-5c60c3c61cfb',1640918958513,1640918958513,'金融行业','https://avatars.githubusercontent.com/u/29704671?v=4');
