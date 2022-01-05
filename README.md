@@ -43,36 +43,12 @@ logging.level.com.baidu=DEBUG
 ## 注意事项
 redirect 跳转到路径地址
 
+## 错误解决
+[降低flyway版本]org.flywaydb.core.api.FlywayException: No database found to handle jdbc:mysq
+[设置spring.flyway.baselineOnMigrate=true并清空数据库表]Found non-empty schema(s) `community` without schem a history table! Use bas
 
 ## 工具
 [git工具]http://git-scm.com/
 [register快捷键]shift+ctrl+alt+?
 [bootcss前端工具]https://v3.bootcss.com/css/
 
-## 脚本
-```sql
-CREATE TABLE users (
-  id int NOT NULL AUTO_INCREMENT,
-  account_id varchar(100) DEFAULT NULL,
-  name varchar(50) DEFAULT NULL,
-  token char(36) DEFAULT NULL,
-  gmt_create bigint DEFAULT NULL,
-  gmt_modified bigint DEFAULT NULL,
-  PRIMARY KEY (id)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='登录人员信息表'
-```
-
-```sql
-CREATE TABLE PUBLIC.question(
-id int auto_increment PRIMARY KEY,
-titile varchar(50),
-description text,
-gmt_create bigint,
-gmt_modified bigint,
-creator integer,
-comment_account integer,
-view_account integer,
-like_account integer,
-tag varchar(200)
-)
-```
