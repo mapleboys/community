@@ -45,10 +45,13 @@ redirect 跳转到路径地址
 
 ## 错误解决
 [降低flyway版本]org.flywaydb.core.api.FlywayException: No database found to handle jdbc:mysq
+
 [设置spring.flyway.baselineOnMigrate=true并清空数据库表]Found non-empty schema(s) `community` without schem a history table! Use bas
 
 ## 工具
 [git工具]http://git-scm.com/
+
 [register快捷键]shift+ctrl+alt+?
+
 [bootcss前端工具]https://v3.bootcss.com/css/
 
