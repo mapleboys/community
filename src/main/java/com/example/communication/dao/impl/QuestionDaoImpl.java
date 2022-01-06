@@ -1,6 +1,7 @@
 package com.example.communication.dao.impl;
 
 import com.example.communication.dao.QuestionDao;
+import com.example.communication.dto.QuestionQueryDto;
 import com.example.communication.model.Question;
 import org.apache.ibatis.session.SqlSession;
 
@@ -21,5 +22,10 @@ public class QuestionDaoImpl implements QuestionDao {
     @Override
     public List<Question> queryQuestionAll() {
         return this.sqlSession.selectList("QuestionDao.queryQuestionAll");
+    }
+
+    @Override
+    public List<Question> queryQuestionByPage(QuestionQueryDto questionQueryDto) {
+        return this.sqlSession.selectList("QuestionDao.queryQuestionByPage", questionQueryDto);
     }
 }

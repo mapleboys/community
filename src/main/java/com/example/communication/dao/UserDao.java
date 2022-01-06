@@ -29,4 +29,5 @@ public interface UserDao {
      *
      */
     public User queryUserById(Integer id);
+
 }

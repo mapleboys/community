@@ -1,6 +1,7 @@
 package com.example.communication.dao;
 
 
+import com.example.communication.dto.QuestionQueryDto;
 import com.example.communication.model.Question;
 
 import java.util.List;
@@ -21,4 +22,9 @@ public interface QuestionDao {
      * @return
      */
     public List<Question> queryQuestionAll();
+    /**
+     * 根据rows和offset查询问题
+     * @param questionQueryDto
+     */
+    public List<Question> queryQuestionByPage(QuestionQueryDto questionQueryDto);
 }

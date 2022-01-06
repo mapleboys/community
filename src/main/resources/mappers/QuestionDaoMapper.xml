@@ -38,4 +38,17 @@
         from question;
     </select>
 
+    <!--根据rows和offset查询数据-->
+    <select id="queryQuestionByPage" resultType="com.example.communication.model.Question">
+        select title as title,
+        description as description,
+        gmt_create as gmtCreate,
+        gmt_modified as gmtModified,
+        creator as creator,
+        comment_account as commentAccount,
+        view_account as viewAccount,
+        like_account as likeAccount,
+        tag as tag
+        from question limit #{rows}, #{offset};
+    </select>
 </mapper>

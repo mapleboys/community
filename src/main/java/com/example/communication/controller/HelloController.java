@@ -3,6 +3,7 @@ package com.example.communication.controller;
 import com.example.communication.dao.UserDao;
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
+import com.example.communication.dto.QuestionQueryDto;
 import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
 import com.example.communication.util.MybatisUtils;
@@ -24,7 +25,9 @@ import java.util.List;
 public class HelloController {
     @GetMapping("/")
     public String hello(HttpServletRequest request,
-        Model model){
+                        @RequestParam(name = "currentPage", defaultValue = "1") Integer currentPage,
+                        @RequestParam(name = "offset", defaultValue = "10") Integer offset,
+                        Model model){
         Cookie[] cookies = request.getCookies();
         // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
         if (cookies != null) {
@@ -43,19 +46,20 @@ public class HelloController {
         }
 
         QuestionDtoService questionDtoService = new QuestionDtoService();
-        List<QuestionDto> questionDtos = questionDtoService.list();
+
+        List<QuestionDto> questionDtos = questionDtoService.list(currentPage, offset);
         System.out.println(questionDtos);
         model.addAttribute("questions", questionDtos);
 
         // 分页
         PaginationDto paginationDto = new PaginationDto();
-        paginationDto.setQuestionList(questionDtos);
-        paginationDto.setCurrentPage();
-        paginationDto.setPageList();
-        paginationDto.setShowEndPage();
-        paginationDto.setShowFirstPage();
-        paginationDto.setShowNextPage();
-        paginationDto.setShowPreviousPage();
+//        paginationDto.setQuestionList(questionDtos);
+//        paginationDto.setCurrentPage();
+//        paginationDto.setPageList();
+//        paginationDto.setShowEndPage();
+//        paginationDto.setShowFirstPage();
+//        paginationDto.setShowNextPage();
+//        paginationDto.setShowPreviousPage();
 
         return "index";
     }
