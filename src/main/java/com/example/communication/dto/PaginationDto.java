@@ -1,9 +1,12 @@
 package com.example.communication.dto;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class PaginationDto {
-    private List<QuestionDto> questionList;
+    private List<QuestionDto> questionList; //问题列表
     private boolean showPreviousPage;   // 前一页
     private boolean showNextPage;   //后一页
     private boolean showEndPage;    // 最后一页
