@@ -29,6 +29,8 @@
 
 [解决flyway命令报错]https://blog.csdn.net/lejustdoit/article/details/107574971
 
+[thymeleaf]https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置

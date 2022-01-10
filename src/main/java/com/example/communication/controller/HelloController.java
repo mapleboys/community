@@ -26,7 +26,7 @@ public class HelloController {
     @GetMapping("/")
     public String hello(HttpServletRequest request,
                         @RequestParam(name = "currentPage", defaultValue = "1") Integer currentPage,
-                        @RequestParam(name = "offset", defaultValue = "10") Integer offset,
+                        @RequestParam(name = "offset", defaultValue = "2") Integer offset,
                         Model model){
         Cookie[] cookies = request.getCookies();
         // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
@@ -46,13 +46,11 @@ public class HelloController {
         }
 
         QuestionDtoService questionDtoService = new QuestionDtoService();
-
-        List<QuestionDto> questionDtos = questionDtoService.list(currentPage, offset);
-        System.out.println(questionDtos);
-        model.addAttribute("questions", questionDtos);
+        PaginationDto pagination = questionDtoService.list(currentPage, offset);
+        System.out.println(pagination);
+        model.addAttribute("pagination", pagination);
 
         // 分页
-        PaginationDto paginationDto = new PaginationDto();
 //        paginationDto.setQuestionList(questionDtos);
 //        paginationDto.setCurrentPage();
 //        paginationDto.setPageList();

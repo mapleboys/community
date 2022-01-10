@@ -2,6 +2,7 @@ package com.example.communication.service;
 
 import com.example.communication.dao.QuestionDao;
 import com.example.communication.dao.UserDao;
+import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.dto.QuestionQueryDto;
 import com.example.communication.model.Question;
@@ -16,14 +17,29 @@ import java.util.List;
 
 @Service
 public class QuestionDtoService {
-    public List<QuestionDto> list(Integer currentPage, Integer offset) {
+    public PaginationDto list(Integer currentPage, Integer offset) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
+        PaginationDto paginationDto = new PaginationDto();
+
         SqlSession sqlSession = MybatisUtils.getSqlseesion();
         QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
         UserDao userDao = sqlSession.getMapper(UserDao.class);
+        int size = questionDao.queryQuestionAll().size();
+        Integer totalPage;
+        if(size%offset == 0) {
+            totalPage = size/offset;
+        }else {
+            totalPage = (size/offset + 1);
+        }
+        if(currentPage < 1) {
+            currentPage = 1;
+        }
+        if(currentPage >= totalPage){
+            currentPage = totalPage;
+        }
+        // 查询问题列表
         questionQueryDto.setOffset(offset);
         questionQueryDto.setRows((currentPage - 1)*offset);
-        System.out.println(questionQueryDto);
         List<Question> questions = questionDao.queryQuestionByPage(questionQueryDto);
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();
         for(Question question:questions) {
@@ -34,6 +50,8 @@ public class QuestionDtoService {
             questionDto.setUser(user);
             questionDtos.add(questionDto);
         }
-        return questionDtos;
+        paginationDto.setQuestionList(questionDtos);
+        paginationDto.setPagination(size, currentPage, offset);
+        return paginationDto;
     }
 }

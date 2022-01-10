@@ -28,4 +28,5 @@ public class QuestionDaoImpl implements QuestionDao {
     public List<Question> queryQuestionByPage(QuestionQueryDto questionQueryDto) {
         return this.sqlSession.selectList("QuestionDao.queryQuestionByPage", questionQueryDto);
     }
+
 }
