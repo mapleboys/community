@@ -3,12 +3,13 @@ package com.example.communication.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ReadTxt {
     public static void main(String[] args) throws FileNotFoundException {
+        HashMap<String, String> stringStringMap = new HashMap<>();
+        stringStringMap.put("s", "yt");
+
         Integer s1 = 14;
         Integer m = 5;
         Integer x = s1/m + 1;

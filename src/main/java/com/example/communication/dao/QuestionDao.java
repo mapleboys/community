@@ -1,6 +1,7 @@
 package com.example.communication.dao;
 
 
+import com.example.communication.dto.QuestionQueryByIdDto;
 import com.example.communication.dto.QuestionQueryDto;
 import com.example.communication.model.Question;
 
@@ -27,4 +28,14 @@ public interface QuestionDao {
      * @param questionQueryDto
      */
     public List<Question> queryQuestionByPage(QuestionQueryDto questionQueryDto);
+    /**
+     * 根据用户id和分页查询问题
+     * @param questionQueryByIdDto
+     */
+    public List<Question> queryQuestionByID(QuestionQueryByIdDto questionQueryByIdDto);
+    /**
+     * 根据用户id查询问题
+     * @param creator
+     */
+    public List<Question> queryQuestionByCreator(Integer creator);
 }
