@@ -68,12 +68,12 @@
                 <ul class="pagination">
                     <li th:if="${pagination.showFirstPage}">
                         <a href="/?currentPage=1" aria-label="First">
-                            <span aria-hidden="true">first</span>
+                            <span aria-hidden="true">&lt;&lt;</span>
                         </a>
                     </li>
                     <li th:if="${pagination.showPreviousPage}">
-                        <a href="@{/(currentPage=${pagination.currentPage-1})}" aria-label="Previous">
-                            <span aria-hidden="true">pre</span>
+                        <a th:href="@{/(currentPage=${pagination.currentPage-1})}" aria-label="Previous">
+                            <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
                     <li th:each="page:${pagination.pageList}" th:class="${pagination.currentPage == page}?'active':''">
@@ -81,13 +81,13 @@
                         </a>
                     </li>
                     <li th:if="${pagination.showNextPage}">
-                        <a href="@{/(currentPage=${pagination.currentPage + 1})}" aria-label="Next">
-                            <span aria-hidden="true" >next</span>
+                        <a th:href="@{/(currentPage=${pagination.currentPage + 1})}" aria-label="Next">
+                            <span aria-hidden="true" >&gt;</span>
                         </a>
                     </li>
                     <li th:if="${pagination.showEndPage}">
                         <a th:href="@{/(currentPage=${pagination.totalPage})}" aria-label="End">
-                            <span aria-hidden="true">end</span>
+                            <span aria-hidden="true">&gt;&gt;</span>
                         </a>
                     </li>
                 </ul>
