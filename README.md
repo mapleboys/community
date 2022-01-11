@@ -31,6 +31,8 @@
 
 [thymeleaf]https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 
+[jquery]https://code.jquery.com/jquery-3.6.0.min.js
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
