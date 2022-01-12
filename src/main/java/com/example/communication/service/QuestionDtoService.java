@@ -80,7 +80,7 @@ public class QuestionDtoService {
         if(currentPage < 1) {
             currentPage = 1;
         }
-        if(currentPage >= totalPage){
+        if(totalPage != 0 && currentPage >= totalPage){
             currentPage = totalPage;
         }
         // 查询问题列表

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -31,27 +32,10 @@ public class HelloController {
                         @RequestParam(name = "currentPage", defaultValue = "1") Integer currentPage,
                         @RequestParam(name = "offset", defaultValue = "5") Integer offset,
                         Model model){
-        Cookie[] cookies = request.getCookies();
-        // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                String name = cookie.getName();
-                if (name.equals("token") ){
-                    String token = cookie.getValue();
-                    SqlSession sqlSession = MybatisUtils.getSqlseesion();
-                    UserDao userdao = sqlSession.getMapper(UserDao.class);
-                    User user = userdao.queryUserByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                }
-            }
-        }
 
         PaginationDto pagination = questionDtoService.list(currentPage, offset);
         System.out.println(pagination);
         model.addAttribute("pagination", pagination);
-
         return "index";
     }
 }

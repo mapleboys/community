@@ -28,24 +28,7 @@ public class ProfileController {
                           HttpServletRequest request,
                           Model model) {
 
-        Cookie[] cookies = request.getCookies();
-        User user = new User();
-        // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                String name = cookie.getName();
-                if (name.equals("token") ){
-                    String token = cookie.getValue();
-                    SqlSession sqlSession = MybatisUtils.getSqlseesion();
-                    UserDao userdao = sqlSession.getMapper(UserDao.class);
-                    user = userdao.queryUserByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                }
-            }
-        }
-
+        User user = (User) request.getSession().getAttribute("user");
         if(user ==  null) {
             return "redirect:/";
         }

@@ -55,24 +55,7 @@ public class PublishController {
         SqlSession sqlSession = MybatisUtils.getSqlseesion();
         QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
 
-
-        Cookie[] cookies = request.getCookies();
-        User user = null;
-        // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
-        System.out.println("开始判断是否存在token");
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                String name = cookie.getName();
-                if (name.equals("token") ){
-                    String token = cookie.getValue();
-                    UserDao userdao = sqlSession.getMapper(UserDao.class);
-                    user = userdao.queryUserByToken(token);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                }
-            }
-        }
+        User user = (User) request.getSession().getAttribute("user");
         // 返回错误信息
         if (user == null) {
             model.addAttribute("error", "用户未登录");

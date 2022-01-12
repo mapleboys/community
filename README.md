@@ -33,6 +33,8 @@
 
 [jquery]https://code.jquery.com/jquery-3.6.0.min.js
 
+[spring MVC]tps://docs.spring.io/spring-framework/docs/current/reference/html/web.html
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置

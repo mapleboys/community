@@ -20,19 +20,13 @@ public class PaginationDto {
 
         // 总页数
         Integer totalPage;
-        if(size%offset == 0) {
+        if(size != 0 && size%offset == 0) {
             totalPage = size/offset;
         }else {
             totalPage = size/offset + 1;
         }
         this.setTotalPage(totalPage);
-        // 特殊处理
-        if (currentPage < 1) {
-            currentPage = 1;
-        }
-        if (currentPage > totalPage) {
-            currentPage = totalPage;
-        }
+
         this.setCurrentPage(currentPage);
         // 页面展示的页码列表
         ArrayList<Integer> integers = new ArrayList<>();
@@ -47,7 +41,7 @@ public class PaginationDto {
         }
         this.setPageList(integers);
         // 判断是否显示前一页
-        if(currentPage == 1) {
+        if(currentPage == 1 || size == 0) {
             this.setShowPreviousPage(false);
         } else {
             this.setShowPreviousPage(true);
@@ -59,7 +53,7 @@ public class PaginationDto {
             this.setShowNextPage(true);
         }
         // 判断是否显示跳转第一页
-        if (this.pageList.contains(1)) {
+        if (this.pageList.contains(1) || size == 0) {
             this.setShowFirstPage(false);
         } else {
             this.setShowFirstPage(true);
