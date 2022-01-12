@@ -26,7 +26,6 @@ public class WebConfig implements WebMvcConfigurer {
 //        System.out.println("before" + LocalDateTime.now());
 //        SessionInterceptor interceptor = new SessionInterceptor();
         registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
-        System.out.println("webConfig" + LocalDateTime.now());
     }
 
 

@@ -19,8 +19,9 @@ import java.util.List;
 
 @Service
 public class QuestionDtoService {
-//    @Autowired
-//    QuestionQueryDto questionQueryDto;
+
+
+
     public PaginationDto list(Integer currentPage, Integer offset) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
@@ -63,6 +64,7 @@ public class QuestionDtoService {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
         QuestionQueryByIdDto questionQueryByIdDto = new QuestionQueryByIdDto();
+
         questionQueryByIdDto.setCreator(id);
         questionQueryByIdDto.setOffset(offset);
         questionQueryByIdDto.setRows((currentPage - 1)*offset);

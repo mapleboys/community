@@ -16,8 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 @Service
 public class SessionInterceptor implements HandlerInterceptor {
 
-
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
