@@ -5,6 +5,7 @@ import com.example.communication.dto.AccessTokenDto;
 import com.example.communication.dto.GithubUser;
 import com.example.communication.model.User;
 import com.example.communication.provider.GitHubProvider;
+import com.example.communication.service.UserService;
 import com.example.communication.util.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class AuthorizeController {
 
     @Autowired
     private GitHubProvider gitHubProvider;
+
+    @Autowired
+    private UserService userService;
 
     @Value("${github.client.id}")
     private String clientId;
@@ -64,7 +68,7 @@ public class AuthorizeController {
             user.setBio(githubUser.getBio());
             user.setAvatarUrl(githubUser.getAvatar_url());
             System.out.println(user);
-            userdao.insertUser(user);
+            UserService.insertOrUpdate(user);
             sqlSession.commit();
             response.addCookie(new Cookie("token", token));
             //登录成功，写cookie和session

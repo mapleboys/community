@@ -38,4 +38,9 @@ public interface QuestionDao {
      * @param creator
      */
     public List<Question> queryQuestionByCreator(Integer creator);
+    /**
+     * 根据问题id查询问题详情
+     * @param id
+     */
+    public Question queryByQuestionId(Integer id);
 }

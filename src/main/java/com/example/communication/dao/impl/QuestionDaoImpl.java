@@ -40,5 +40,10 @@ public class QuestionDaoImpl implements QuestionDao {
         return this.sqlSession.selectList("QuestionDao.queryQuestionByCreator", creator);
     }
 
+    @Override
+    public Question queryByQuestionId(Integer id) {
+        return (Question) this.sqlSession.selectOne("QuestionDao.queryByQuestionId", id);
+    }
+
 
 }

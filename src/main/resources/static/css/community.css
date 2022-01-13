@@ -1,3 +1,13 @@
 .profile .section{
     margin-top: 15px;
 }
+
+.toolStyle{
+    font-size:12px;
+    margin-top:10px;
+    color:#c9cccf;
+}
+
+.contextStyle{
+    font-size:18px;
+}

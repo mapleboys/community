@@ -20,8 +20,6 @@ import java.util.List;
 @Service
 public class QuestionDtoService {
 
-
-
     public PaginationDto list(Integer currentPage, Integer offset) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
@@ -99,5 +97,19 @@ public class QuestionDtoService {
         paginationDto.setQuestionList(questionDtos);
         paginationDto.setPagination(size, currentPage, offset);
         return paginationDto;
+    }
+
+    public QuestionDto selectById(Integer id) {
+        QuestionDto questionDto = new QuestionDto();
+        SqlSession sqlSession = MybatisUtils.getSqlseesion();
+        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
+        UserDao userDao = sqlSession.getMapper(UserDao.class);
+        Question question = questionDao.queryByQuestionId(id);
+        if (question != null) {
+            User user = userDao.queryUserById(question.getCreator());
+            BeanUtils.copyProperties(question, questionDto);
+            questionDto.setUser(user);
+        }
+        return questionDto;
     }
 }
