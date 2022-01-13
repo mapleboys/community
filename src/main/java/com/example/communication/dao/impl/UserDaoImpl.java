@@ -33,4 +33,14 @@ public class UserDaoImpl implements UserDao {
         return (User)this.sqlSession.selectOne("UserDao.queryUserById", id);
     }
 
+    @Override
+    public List<User> queryByAccId(String accountId) {
+        return this.sqlSession.selectList("UserDao.queryByAccId", accountId);
+    }
+
+    @Override
+    public void updateByAccId(User user) {
+        this.sqlSession.update("UserDao.updateByAccId", user);
+    }
+
 }

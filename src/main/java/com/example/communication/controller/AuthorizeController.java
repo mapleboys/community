@@ -52,9 +52,6 @@ public class AuthorizeController {
         accessTokenDto.setClient_secret(clientSecret);
         String accessToken = gitHubProvider.getAccessToken(accessTokenDto);
         GithubUser githubUser = gitHubProvider.getUser(accessToken);
-        UserDao userdao = null;
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        userdao = sqlSession.getMapper(UserDao.class);
 
         if (githubUser != null && !String.valueOf(githubUser.getId()).equals("0")) {
             System.out.println("开始");
@@ -67,9 +64,7 @@ public class AuthorizeController {
             user.setGmtModified(user.getGmtCreate());
             user.setBio(githubUser.getBio());
             user.setAvatarUrl(githubUser.getAvatar_url());
-            System.out.println(user);
             UserService.insertOrUpdate(user);
-            sqlSession.commit();
             response.addCookie(new Cookie("token", token));
             //登录成功，写cookie和session
             request.getSession().setAttribute("user", githubUser);

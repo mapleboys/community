@@ -25,7 +25,7 @@ public class WebConfig implements WebMvcConfigurer {
 //        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**").excludePathPatterns("index", "/static/**");
 //        System.out.println("before" + LocalDateTime.now());
 //        SessionInterceptor interceptor = new SessionInterceptor();
-        registry.addInterceptor(sessionInterceptor).addPathPatterns("/publish");
+        registry.addInterceptor(sessionInterceptor).addPathPatterns("/**");
     }
 
 

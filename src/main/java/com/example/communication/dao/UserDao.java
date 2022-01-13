@@ -29,5 +29,14 @@ public interface UserDao {
      *
      */
     public User queryUserById(Integer id);
-
+    /**
+     * 根据AccountId查询用户
+     *
+     */
+    public List<User> queryByAccId(String accountId);
+    /**
+     * 根据AccountId更新用户信息
+     *
+     */
+    public void updateByAccId(User user);
 }
