@@ -2,13 +2,17 @@ package com.example.communication.controller;
 
 import com.example.communication.dao.QuestionDao;
 import com.example.communication.dao.UserDao;
+import com.example.communication.dto.QuestionDto;
 import com.example.communication.model.Question;
 import com.example.communication.model.User;
+import com.example.communication.service.QuestionDtoService;
 import com.example.communication.util.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,11 +28,15 @@ public class PublishController {
         return "publish";
     }
 
+    @Autowired
+    QuestionDtoService questionDtoService;
+
     @PostMapping ("/doPublish")
     public String doPublish(
             @RequestParam(value = "title", required = false) String title,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "tag", required = false) String tag,
+            @RequestParam(value = "id") Integer id,
             HttpServletRequest request,
             Model model) {
 
@@ -52,8 +60,6 @@ public class PublishController {
 
 
         System.out.println("调用pulish的post请求");
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
 
         User user = (User) request.getSession().getAttribute("user");
         // 返回错误信息
@@ -73,11 +79,20 @@ public class PublishController {
         question.setViewAccount(0);
         question.setGmtCreate(System.currentTimeMillis());
         question.setGmtModified(question.getGmtCreate());
+        question.setId(id);
 
-        questionDao.insertQuestion(question);
-        sqlSession.commit();
-
+        questionDtoService.createOrUpdate(question);
         return "redirect:/";
     }
 
+    @GetMapping("/publish/{id}")
+    public String publishUpdate(@PathVariable(value = "id") Integer id,
+                                Model model) {
+        QuestionDto questionDto = questionDtoService.selectById(id);
+        model.addAttribute("title", questionDto.getTitle());
+        model.addAttribute("description", questionDto.getDescription());
+        model.addAttribute("tag", questionDto.getTag());
+        model.addAttribute("id", id);
+        return "publish";
+    }
 }

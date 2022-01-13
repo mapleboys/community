@@ -45,5 +45,10 @@ public class QuestionDaoImpl implements QuestionDao {
         return (Question) this.sqlSession.selectOne("QuestionDao.queryByQuestionId", id);
     }
 
+    @Override
+    public void updateQuestion(Question question) {
+        this.sqlSession.update("QuestionDao.updateQuestion", question);
+    }
+
 
 }

@@ -43,4 +43,9 @@ public interface QuestionDao {
      * @param id
      */
     public Question queryByQuestionId(Integer id);
+    /**
+     * 根据问题id更新问题详情
+     * @param question
+     */
+    public void updateQuestion(Question question);
 }

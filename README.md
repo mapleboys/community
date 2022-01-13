@@ -61,3 +61,7 @@ redirect 跳转到路径地址
 
 [bootcss前端工具]https://v3.bootcss.com/css/
 
+```bash
+mvn:flyway migrate
+```
+

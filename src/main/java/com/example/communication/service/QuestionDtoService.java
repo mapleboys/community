@@ -112,4 +112,21 @@ public class QuestionDtoService {
         }
         return questionDto;
     }
+
+    public void createOrUpdate(Question question) {
+        QuestionDto questionDto = selectById(question.getId());
+        SqlSession sqlSession = MybatisUtils.getSqlseesion();
+        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
+        if (questionDto == null) {
+            // 表中不存在此数据，创建
+            questionDao.insertQuestion(question);
+
+        } else {
+            // 表中存在此数据，更新
+            question.setGmtModified(System.currentTimeMillis());
+            questionDao.updateQuestion(question);
+        }
+        sqlSession.commit();
+
+    }
 }
