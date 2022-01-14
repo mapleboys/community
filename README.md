@@ -35,6 +35,8 @@
 
 [spring MVC]tps://docs.spring.io/spring-framework/docs/current/reference/html/web.html
 
+[mybatis generator]http://mybatis.org/generator/
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
@@ -50,7 +52,7 @@ logging.level.com.baidu=DEBUG
 redirect 跳转到路径地址
 
 ## 错误解决
-[降低flyway版本]org.flywaydb.core.api.FlywayException: No database found to handle jdbc:mysq
+[降低flyway版本]org.flywaydb.core.api.FlywayException: No database found to handle jdbc:mysql
 
 [设置spring.flyway.baselineOnMigrate=true并清空数据库表]Found non-empty schema(s) `community` without schem a history table! Use bas
 
@@ -61,7 +63,14 @@ redirect 跳转到路径地址
 
 [bootcss前端工具]https://v3.bootcss.com/css/
 
+
+# 命令
+1.生成 Model 等 MyBatis 配置文件的命令
 ```bash
-mvn:flyway migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
 
+2.运行数据库脚本，创建本地数据库
+```bash
+mvn flyway:migrate
+```
