@@ -1,13 +1,10 @@
 package com.example.communication.controller;
 
-import com.example.communication.dao.QuestionDao;
-import com.example.communication.dao.UserDao;
+
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.model.Question;
 import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
-import com.example.communication.util.MybatisUtils;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 
 @Controller
 public class PublishController {
@@ -36,7 +31,7 @@ public class PublishController {
             @RequestParam(value = "title", required = false) String title,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "tag", required = false) String tag,
-            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "id", required = false) Integer id,
             HttpServletRequest request,
             Model model) {
 

@@ -35,7 +35,7 @@
 
 [spring MVC]tps://docs.spring.io/spring-framework/docs/current/reference/html/web.html
 
-[mybatis generator]http://mybatis.org/generator/
+[mybatis generator]http://mybatis.org/generator/configreference/table.html
 
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
@@ -56,6 +56,20 @@ redirect 跳转到路径地址
 
 [设置spring.flyway.baselineOnMigrate=true并清空数据库表]Found non-empty schema(s) `community` without schem a history table! Use bas
 
+[删除重复]
+```text
+错误提示：java.lang.IllegalArgumentException: Property 'sqlSessionFactory' or 'sqlSessionTemplate' are required
+原因：main中的标注@MapperScan("com.example.communication.mapper")和application.yml
+中mybatis:mapper-locations: classpath:mapper/*.xml重复
+处理办法：删除main中的标注
+参考：https://blog.csdn.net/lv_dw962464/article/details/84891078
+```
+
+[mybatis报错]
+```text
+错误：Springboot +Mybatis整合常见错误 报错：Property ‘sqlSessionFactory‘ or ‘sqlSessionTemplate‘ are required
+解决：https://www.jianshu.com/p/d96a53b77713
+```
 ## 工具
 [git工具]http://git-scm.com/
 

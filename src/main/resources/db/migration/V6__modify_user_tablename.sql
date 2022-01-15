@@ -1,0 +1,1 @@
+RENAME TABLE community.users TO community.bbs_users;

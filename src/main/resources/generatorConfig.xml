@@ -5,12 +5,14 @@
 
 <generatorConfiguration>
     <context id="MysqlTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
         <!-- 数据库连接配置 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/community"
                         userId="root"
                         password="rootroot">
         </jdbcConnection>
+        <!--<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin> -->
         <!-- Java 类型解析，用于根据数据库列信息解析出对应的Java类型 -->
         <!-- 默认情况下数据库中的 decimal，bigInt 在 Java 对应是 sql 下的 BigDecimal 类 -->
         <javaTypeResolver >
@@ -29,16 +31,16 @@
             <property name="immutable" value="false"/>
         </javaModelGenerator>
         <!-- targetPackage 和 targetProject：生成的 mapper 文件的包和位置 -->
-        <sqlMapGenerator targetPackage="mappers"  targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources">
             <!-- 针对数据库的一个配置，是否把 schema 作为字包名 -->
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="mapper"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.communication.mapper"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
-        <table tableName="users" domainObjectName="Users" ></table>
-        <table tableName="question" domainObjectName="Question" ></table>
+        <table tableName="bbs_users" domainObjectName="User" ></table>
+        <table tableName="question" domainObjectName="Question"></table>
     </context>
 </generatorConfiguration>

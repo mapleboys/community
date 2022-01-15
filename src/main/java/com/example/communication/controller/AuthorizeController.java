@@ -1,13 +1,10 @@
 package com.example.communication.controller;
 
-import com.example.communication.dao.UserDao;
 import com.example.communication.dto.AccessTokenDto;
 import com.example.communication.dto.GithubUser;
 import com.example.communication.model.User;
 import com.example.communication.provider.GitHubProvider;
 import com.example.communication.service.UserService;
-import com.example.communication.util.MybatisUtils;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.UUID;
 
 
@@ -64,7 +58,7 @@ public class AuthorizeController {
             user.setGmtModified(user.getGmtCreate());
             user.setBio(githubUser.getBio());
             user.setAvatarUrl(githubUser.getAvatar_url());
-            UserService.insertOrUpdate(user);
+            userService.insertOrUpdate(user);
             response.addCookie(new Cookie("token", token));
             //登录成功，写cookie和session
             //request.getSession().setAttribute("user", user);

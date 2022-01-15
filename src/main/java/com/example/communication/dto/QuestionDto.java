@@ -3,8 +3,6 @@ package com.example.communication.dto;
 import com.example.communication.model.User;
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 public class QuestionDto {
     private Integer id;

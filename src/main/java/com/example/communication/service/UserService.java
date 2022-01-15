@@ -1,27 +1,34 @@
 package com.example.communication.service;
 
-import com.example.communication.dao.UserDao;
+import com.example.communication.mapper.QuestionMapper;
+import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.User;
-import com.example.communication.util.MybatisUtils;
-import org.apache.ibatis.session.SqlSession;
+import com.example.communication.model.UserExample;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserService {
-    public static void insertOrUpdate(User user) {
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        UserDao userdao = sqlSession.getMapper(UserDao.class);
-        List<User> users = userdao.queryByAccId(user.getAccountId());
+    @Autowired
+    private QuestionMapper questionMapper;
+
+    @Autowired
+    private UserMapper userMapper;
+
+    public void insertOrUpdate(User user) {
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andAccountIdEqualTo(user.getAccountId());
+        List<User> users = userMapper.selectByExample(userExample);
+
         if (users != null && users.get(0) != null) {
             // 更新用户
-            userdao.updateByAccId(user);
-            sqlSession.commit();
+            user.setId(users.get(0).getId());
+            userMapper.updateByExample(user, userExample);
         } else {
             // 插入用户
-            userdao.insertUser(user);
-            sqlSession.commit();
+            userMapper.insert(user);
         }
 
 

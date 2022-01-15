@@ -1,15 +1,13 @@
 package com.example.communication.service;
 
-import com.example.communication.dao.QuestionDao;
-import com.example.communication.dao.UserDao;
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.dto.QuestionQueryByIdDto;
 import com.example.communication.dto.QuestionQueryDto;
-import com.example.communication.model.Question;
-import com.example.communication.model.User;
-import com.example.communication.util.MybatisUtils;
-import org.apache.ibatis.session.SqlSession;
+import com.example.communication.mapper.QuestionMapper;
+import com.example.communication.mapper.UserMapper;
+import com.example.communication.model.*;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +17,20 @@ import java.util.List;
 
 @Service
 public class QuestionDtoService {
+    @Autowired
+    QuestionMapper questionMapper;
+
+    @Autowired
+    UserMapper userMapper;
 
     public PaginationDto list(Integer currentPage, Integer offset) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
 
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        int size = questionDao.queryQuestionAll().size();
+        //计算总问题数
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria().andIdIsNotNull();
+        int size = questionMapper.selectByExample(questionExample).size();
         Integer totalPage;
         if(size%offset == 0) {
             totalPage = size/offset;
@@ -41,36 +44,33 @@ public class QuestionDtoService {
             currentPage = totalPage;
         }
         // 查询问题列表
-        questionQueryDto.setOffset(offset);
-        questionQueryDto.setRows((currentPage - 1)*offset);
-        List<Question> questions = questionDao.queryQuestionByPage(questionQueryDto);
+        List<Question> questions = questionMapper.
+                selectByExampleWithRowbounds(null,
+                        new RowBounds((currentPage - 1)*offset, offset));
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();
         for(Question question:questions) {
             Integer creator = question.getCreator();
-            User user = userDao.queryUserById(creator);
+            UserExample userExample = new UserExample();
+            userExample.createCriteria().andIdEqualTo(creator);
+            List<User> users1 = userMapper.selectByExample(userExample);
             QuestionDto questionDto = new QuestionDto();
             BeanUtils.copyProperties(question,questionDto);
-            questionDto.setUser(user);
+            questionDto.setUser(users1.get(0));
             questionDtos.add(questionDto);
         }
         paginationDto.setQuestionList(questionDtos);
+
         paginationDto.setPagination(size, currentPage, offset);
         return paginationDto;
     }
 
     public PaginationDto list(Integer id, Integer currentPage, Integer offset) {
-        QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
-        QuestionQueryByIdDto questionQueryByIdDto = new QuestionQueryByIdDto();
 
-        questionQueryByIdDto.setCreator(id);
-        questionQueryByIdDto.setOffset(offset);
-        questionQueryByIdDto.setRows((currentPage - 1)*offset);
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria().andCreatorEqualTo(id);
+        int size = questionMapper.selectByExample(questionExample).size();
 
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        int size = questionDao.queryQuestionByCreator(id).size();
         Integer totalPage;
         if(size%offset == 0) {
             totalPage = size/offset;
@@ -84,11 +84,11 @@ public class QuestionDtoService {
             currentPage = totalPage;
         }
         // 查询问题列表
-        List<Question> questions = questionDao.queryQuestionByID(questionQueryByIdDto);
+        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample,
+                new RowBounds((currentPage - 1)*offset, offset));
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();
         for(Question question:questions) {
-            Integer creator = question.getCreator();
-            User user = userDao.queryUserById(creator);
+            User user = userMapper.selectByPrimaryKey(id);
             QuestionDto questionDto = new QuestionDto();
             BeanUtils.copyProperties(question,questionDto);
             questionDto.setUser(user);
@@ -101,12 +101,10 @@ public class QuestionDtoService {
 
     public QuestionDto selectById(Integer id) {
         QuestionDto questionDto = new QuestionDto();
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        Question question = questionDao.queryByQuestionId(id);
+        Question question = questionMapper.selectByPrimaryKey(id);
+
         if (question != null) {
-            User user = userDao.queryUserById(question.getCreator());
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
             BeanUtils.copyProperties(question, questionDto);
             questionDto.setUser(user);
         }
@@ -115,18 +113,14 @@ public class QuestionDtoService {
 
     public void createOrUpdate(Question question) {
         QuestionDto questionDto = selectById(question.getId());
-        SqlSession sqlSession = MybatisUtils.getSqlseesion();
-        QuestionDao questionDao = sqlSession.getMapper(QuestionDao.class);
-        if (questionDto == null) {
+        if (questionDto == null || questionDto.getId() == null) {
             // 表中不存在此数据，创建
-            questionDao.insertQuestion(question);
+            questionMapper.insert(question);
 
         } else {
             // 表中存在此数据，更新
             question.setGmtModified(System.currentTimeMillis());
-            questionDao.updateQuestion(question);
+            questionMapper.updateByPrimaryKey(question);
         }
-        sqlSession.commit();
-
     }
 }
