@@ -1,5 +1,8 @@
 server:
   port: 8887
+  error:
+    whitelabel:
+      enabled: false
 github:
   client:
     id: 2bcd63e763491ab33831
@@ -20,3 +23,4 @@ spring:
 mybatis:
   type-aliases-package: com.example.communication.model
   mapper-locations: classpath:mapper/*.xml
+

@@ -37,6 +37,8 @@
 
 [mybatis generator]http://mybatis.org/generator/configreference/table.html
 
+[spring文档]https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#howto-customize-the-whitelabel-error-page
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
