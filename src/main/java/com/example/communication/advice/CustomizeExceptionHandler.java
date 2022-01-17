@@ -1,9 +1,12 @@
 package com.example.communication.advice;
 
+import com.example.communication.exception.CustomizeErrorException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,11 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class CustomizeExceptionHandler extends ResponseEntityExceptionHandler {
 
-    //@ExceptionHandler(YourException.class)
+    @ExceptionHandler(CustomizeErrorException.class)
     @ResponseBody
-    ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
+    ModelAndView handleControllerException(HttpServletRequest request, Model model, Throwable ex) {
         HttpStatus status = getStatus(request);
-        return new ResponseEntity<>(new CustomErrorType(status.value(), ex.getMessage()), status);
+        //model.addAttribute("message", ex.getMessage());
+        ModelAndView error = new ModelAndView("error");
+        error.addObject("message", ex.getMessage());
+        return error;
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {

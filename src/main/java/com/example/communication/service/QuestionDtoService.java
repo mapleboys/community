@@ -4,6 +4,8 @@ import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.dto.QuestionQueryByIdDto;
 import com.example.communication.dto.QuestionQueryDto;
+import com.example.communication.exception.CustomizeErrorCode;
+import com.example.communication.exception.CustomizeErrorException;
 import com.example.communication.mapper.QuestionMapper;
 import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.*;
@@ -107,6 +109,8 @@ public class QuestionDtoService {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
             BeanUtils.copyProperties(question, questionDto);
             questionDto.setUser(user);
+        } else {
+            throw new CustomizeErrorException(CustomizeErrorCode.QuestionNotFound);
         }
         return questionDto;
     }

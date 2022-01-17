@@ -67,6 +67,11 @@ redirect 跳转到路径地址
 参考：https://blog.csdn.net/lv_dw962464/article/details/84891078
 ```
 
+[全局exception拦截]
+```text
+CustomExceptionController参考的是BasicErrorController
+```
+
 [mybatis报错]
 ```text
 错误：Springboot +Mybatis整合常见错误 报错：Property ‘sqlSessionFactory‘ or ‘sqlSessionTemplate‘ are required
