@@ -8,6 +8,7 @@ import com.example.communication.model.Comment;
 import com.example.communication.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,6 @@ public class CommentController {
     CommentService commentService;
 
     @ResponseBody
-    //@RequestMapping(value = "/comment", method = RequestMethod.POST)
     @PostMapping("/comment")
     public Object comment(@RequestBody CommentDto commentDto, HttpServletRequest request) {
         Comment comment = new Comment();
