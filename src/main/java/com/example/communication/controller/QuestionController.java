@@ -2,6 +2,8 @@ package com.example.communication.controller;
 
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
+import com.example.communication.exception.CustomizeErrorCode;
+import com.example.communication.exception.CustomizeErrorException;
 import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.model.Question;
 import com.example.communication.service.QuestionDtoService;
@@ -20,19 +22,20 @@ public class QuestionController {
     QuestionExtMapper questionExtMapper;
 
     @GetMapping("/question/{id}")
-    public String QuestionDetail(@PathVariable(name = "id") Integer id,
+    public String QuestionDetail(@PathVariable(name = "id") Long id,
                                  Model model) {
         QuestionDto question = questionDtoService.selectById(id);
+        if (question == null) {
+            throw new CustomizeErrorException(CustomizeErrorCode.QuestionNotFound);
+        }
         model.addAttribute("question", question);
         incViewNum(id);
         return "questionDetail";
     }
-
-    private void incViewNum(Integer id) {
+    private void incViewNum(Long id) {
         Question question = new Question();
         question.setId(id);
+        question.setViewAccount(1);
         questionExtMapper.incView(question);
     }
-
-
 }

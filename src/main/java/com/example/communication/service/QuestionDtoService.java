@@ -51,7 +51,7 @@ public class QuestionDtoService {
                         new RowBounds((currentPage - 1)*offset, offset));
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();
         for(Question question:questions) {
-            Integer creator = question.getCreator();
+            Long creator = question.getCreator();
             UserExample userExample = new UserExample();
             userExample.createCriteria().andIdEqualTo(creator);
             List<User> users1 = userMapper.selectByExample(userExample);
@@ -66,7 +66,7 @@ public class QuestionDtoService {
         return paginationDto;
     }
 
-    public PaginationDto list(Integer id, Integer currentPage, Integer offset) {
+    public PaginationDto list(Long id, Integer currentPage, Integer offset) {
         PaginationDto paginationDto = new PaginationDto();
 
         QuestionExample questionExample = new QuestionExample();
@@ -101,16 +101,13 @@ public class QuestionDtoService {
         return paginationDto;
     }
 
-    public QuestionDto selectById(Integer id) {
+    public QuestionDto selectById(Long id) {
         QuestionDto questionDto = new QuestionDto();
         Question question = questionMapper.selectByPrimaryKey(id);
-
         if (question != null) {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
             BeanUtils.copyProperties(question, questionDto);
             questionDto.setUser(user);
-        } else {
-            throw new CustomizeErrorException(CustomizeErrorCode.QuestionNotFound);
         }
         return questionDto;
     }
@@ -119,8 +116,7 @@ public class QuestionDtoService {
         QuestionDto questionDto = selectById(question.getId());
         if (questionDto == null || questionDto.getId() == null) {
             // 表中不存在此数据，创建
-            questionMapper.insert(question);
-
+            questionMapper.insertSelective(question);
         } else {
             // 表中存在此数据，更新
             question.setGmtModified(System.currentTimeMillis());

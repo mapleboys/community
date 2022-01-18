@@ -10,18 +10,25 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 @ControllerAdvice
 public class CustomizeExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(CustomizeErrorException.class)
     @ResponseBody
-    ModelAndView handleControllerException(HttpServletRequest request, Model model, Throwable ex) {
+    Object handleControllerException(HttpServletRequest request, CustomizeErrorException ex) {
         HttpStatus status = getStatus(request);
-        //model.addAttribute("message", ex.getMessage());
-        ModelAndView error = new ModelAndView("error");
-        error.addObject("message", ex.getMessage());
-        return error;
+        if("application/json".equals(request.getHeader("content-type"))) {
+            HashMap<Object, Object> resultMap = new HashMap<>();
+            resultMap.put("code", ex.getCode());
+            resultMap.put("message", ex.getMessage());
+            return resultMap;
+        } else {
+            ModelAndView error = new ModelAndView("error");
+            error.addObject("message", ex.getMessage());
+            return error;
+        }
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {
