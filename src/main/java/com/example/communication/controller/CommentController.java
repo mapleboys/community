@@ -40,7 +40,7 @@ public class CommentController {
         comment.setType(commentDto.getType());
         commentService.insertComment(comment);
         Map<Object, Object> resultMap = new HashMap<Object, Object>();
-        resultMap.put("retCode", 200);
+        resultMap.put("retCode", 201);
         resultMap.put("retMsg", "评论成功");
         return resultMap;
     }

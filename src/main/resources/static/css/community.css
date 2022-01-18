@@ -11,3 +11,9 @@
 .contextStyle{
     font-size:18px;
 }
+
+.commentBut{
+    margin-bottom:15px;
+    float:right;
+    margin-top:15px
+}
