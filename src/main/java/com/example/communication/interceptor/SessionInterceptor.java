@@ -21,6 +21,7 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
+        System.out.println("判断000");
         // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
         if (cookies != null) {
             for (Cookie cookie : cookies) {

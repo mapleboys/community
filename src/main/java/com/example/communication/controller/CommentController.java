@@ -5,6 +5,7 @@ import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
 import com.example.communication.model.Comment;
+import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,12 +24,14 @@ public class CommentController {
     @ResponseBody
     @PostMapping("/comment")
     public Object comment(@RequestBody CommentDto commentDto, HttpServletRequest request) {
+        System.out.println("调用comment接口");
         Comment comment = new Comment();
-//        if (request.getSession().getAttribute("user") == null) {
-//            throw new CustomizeErrorException(CustomizeErrorCode.UserNotFound);
-//        }
-//        comment.setCommentator((Long) request.getSession().getAttribute("user"));
-        comment.setCommentator(22L);
+        if (request.getSession().getAttribute("user") == null) {
+            throw new CustomizeErrorException(CustomizeErrorCode.UserNotFound);
+        }
+        User user = (User) request.getSession().getAttribute("user");
+        comment.setCommentator(user.getId());
+//        comment.setCommentator(22L);
         comment.setContent(commentDto.getContent());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(comment.getGmtCreate());

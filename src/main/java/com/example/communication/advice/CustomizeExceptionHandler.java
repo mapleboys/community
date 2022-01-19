@@ -21,8 +21,8 @@ public class CustomizeExceptionHandler extends ResponseEntityExceptionHandler {
         HttpStatus status = getStatus(request);
         if("application/json".equals(request.getHeader("content-type"))) {
             HashMap<Object, Object> resultMap = new HashMap<>();
-            resultMap.put("code", ex.getCode());
-            resultMap.put("message", ex.getMessage());
+            resultMap.put("retCode", ex.getCode());
+            resultMap.put("retMsg", ex.getMessage());
             return resultMap;
         } else {
             ModelAndView error = new ModelAndView("error");
