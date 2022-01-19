@@ -1,17 +1,21 @@
 package com.example.communication.controller;
 
+import com.example.communication.dto.CommentDto;
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
 import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.model.Question;
+import com.example.communication.service.CommentService;
 import com.example.communication.service.QuestionDtoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Controller
 public class QuestionController {
@@ -20,6 +24,9 @@ public class QuestionController {
 
     @Autowired
     QuestionExtMapper questionExtMapper;
+
+    @Autowired
+    CommentService commentService;
 
     @GetMapping("/question/{id}")
     public String QuestionDetail(@PathVariable(name = "id") Long id,
@@ -30,6 +37,8 @@ public class QuestionController {
         }
         model.addAttribute("question", question);
         incViewNum(id);
+        // 查询评论列表
+        List<CommentDto> commentDtos = commentService.list(id);
         return "questionDetail";
     }
     private void incViewNum(Long id) {

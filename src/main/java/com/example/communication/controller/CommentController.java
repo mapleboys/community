@@ -1,6 +1,6 @@
 package com.example.communication.controller;
 
-import com.example.communication.dto.CommentDto;
+import com.example.communication.dto.CommentCreateDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
@@ -9,7 +9,6 @@ import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ public class CommentController {
 
     @ResponseBody
     @PostMapping("/comment")
-    public Object comment(@RequestBody CommentDto commentDto, HttpServletRequest request) {
+    public Object comment(@RequestBody CommentCreateDto commentDto, HttpServletRequest request) {
         System.out.println("调用comment接口");
         Comment comment = new Comment();
         if (request.getSession().getAttribute("user") == null) {
@@ -43,7 +42,7 @@ public class CommentController {
         comment.setType(commentDto.getType());
         commentService.insertComment(comment);
         Map<Object, Object> resultMap = new HashMap<Object, Object>();
-        resultMap.put("retCode", 201);
+        resultMap.put("retCode", 200);
         resultMap.put("retMsg", "评论成功");
         return resultMap;
     }

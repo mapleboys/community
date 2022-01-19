@@ -8,12 +8,14 @@
     <script src = "js/jquery-3.6.0.min.js"></script>
     <script src = "js/bootstrap.min.js" type="application/javascript"></script>
 </head>
-<script type="application/javascript">
-    var isClose = window.localStorage.getItem("isClose");
-<!--    debugger;-->
-    if(isClose = "true"){
-        window.close();
-        window.localStorage.removeItem("isClose");
+<script type="text/javascript">
+    window.onload = function () {
+        var closable = window.localStorage.getItem("isClose");
+        if (closable == "true") {
+            window.close();
+            window.localStorage.removeItem("isClose");
+            window.localStorage.setItem("isClose", "true");
+        }
     }
 </script>
 <body style="background-color:#DBDBDB">
