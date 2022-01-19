@@ -32,27 +32,30 @@
                 <h3>
                     <span th:text="${question.commentAccount} + '个回复'"></span>
                 </h3>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="media" th:each="comment:${comments}">
+                <div  th:each="comment:${comments}">
                     <hr>
-                    <div class="media-left media-middle">
-                        <dt class="pull-left" style="margin-bottom:15px">
-                            <a>
-                                <img class="media-object img-thumbnail" th:src="${comment.user.avatarUrl}" style="width:40px;height:40px">
+                    <div style="padding:0px">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object img-thumbnail" th:src="${comment.user.avatarUrl}"
+                                     style="width:40px;height:40px">
                             </a>
-                        </dt>
-                        <dd class="pull-left" >
+                        </div>
+                        <div class="media-body" >
                             <span class="media-heading"  th:text="${comment.user.name}" style="margin:15px"></span>
-                        </dd>
+                        </div>
                     </div>
-                    <div class="media-body" >
-                        <span th:text="${comment.content}"></span><br>
-                        <span th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}" style="float:right"></span>
-                    </div>
+                    <span th:text="${comment.content}" style="margin-left:65px"></span><br>
+                    <span th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}" style="float:right"></span>
                 </div>
+
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <hr>
+                <h3>
+                    <span>输入评论</span>
+                </h3>
+                <hr>
                 <div class="form-group" id="commentForm">
                     <dt class="pull-left" style="margin-bottom:15px">
                         <a>
@@ -60,7 +63,7 @@
                         </a>
                     </dt>
                     <dd class="pull-left" >
-                        <span class="media-heading"  th:text="${question.user.name}" style="margin:15px"></span>
+                        <span class="media-heading"  th:text="${question.user.name}" style="margin:25px"></span>
                     </dd>
                     <textarea class="form-control" rows="5" id="comment_content" name="comment_content"></textarea>
                     <input type="hidden" id = "parent_id" th:value="${question.id}">
@@ -80,7 +83,7 @@
                     </a>
                 </dt>
                 <dd class="pull-left">
-                    <span class="media-heading"  th:text="${question.user.name}" style="margin:15px"></span>
+                    <span class="media-heading"  th:text="${question.user.name}" style="margin:25px"></span>
                 </dd>
             </dl>
             <hr>

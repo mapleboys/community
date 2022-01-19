@@ -39,6 +39,8 @@ public class QuestionController {
         incViewNum(id);
         // 查询评论列表
         List<CommentDto> commentDtos = commentService.list(id);
+        System.out.println("comentDtos:" + commentDtos);
+        model.addAttribute("comments", commentDtos);
         return "questionDetail";
     }
     private void incViewNum(Long id) {
