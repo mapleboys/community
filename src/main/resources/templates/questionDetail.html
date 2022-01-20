@@ -48,13 +48,16 @@
                     <span th:text="${comment.content}" style="margin-left:65px"></span><br>
                     <div class="menu">
                         <span class="glyphicon glyphicon-thumbs-up icon iconStyle iconSelect" ></span>
-                        <span class="iconSelect" onclick="collapseComments(this)" th:id="comment-14">
+                        <span class="iconSelect" onclick="collapseComments(this)" th:id="${comment.id}">
                             <span class="glyphicon glyphicon-comment iconStyle"></span>
                         </span>
                         <span class="pull-right" th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd')}" style="font-size:15px"></span>
                     </div>
-                    <div th:id="div1" hidden="hidden" style="margin:40px">
-                        <span >二级评论01</span>
+                    <div th:id="'comment-'+${comment.id}" hidden="hidden" style="margin:40px;border-style:solid;border-color:#f2f2f2">
+<!--                        <textarea class="form-control" rows="2" id="'subComment_content-'+${comment.id}" name="'subComment_content-'+${comment.id}"></textarea>-->
+<!--                        <button type="button" class="btn btn-success commentBut" onclick="subCommentPost()">-->
+<!--                            提交-->
+<!--                        </button>-->
                     </div>
                 </div>
 

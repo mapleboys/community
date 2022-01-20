@@ -2,6 +2,7 @@ package com.example.communication.controller;
 
 import com.example.communication.dto.CommentCreateDto;
 import com.example.communication.dto.CommentDto;
+import com.example.communication.dto.ResultDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
@@ -44,10 +45,8 @@ public class CommentController {
         }
         comment.setType(commentDto.getType());
         commentService.insertComment(comment);
-        Map<Object, Object> resultMap = new HashMap<Object, Object>();
-        resultMap.put("retCode", 200);
-        resultMap.put("retMsg", "评论成功");
-        return resultMap;
+        ResultDto resultDto = ResultDto.okOf();
+        return resultDto;
     }
 
     @ResponseBody
@@ -58,11 +57,8 @@ public class CommentController {
         // 查询评论列表
         List<CommentDto> subCommentDtos = commentService.list(id, CommentTypeEnum.COMMENT);
         System.out.println("subComentDtos:" + subCommentDtos);
-        Map<Object, Object> resultMap = new HashMap<Object, Object>();
-        resultMap.put("retCode", 200);
-        resultMap.put("retMsg", "评论成功");
-        resultMap.put("")
-        return resultMap;
+        ResultDto resultDto = ResultDto.okOf(subCommentDtos);
+        return resultDto;
 
     }
 }
