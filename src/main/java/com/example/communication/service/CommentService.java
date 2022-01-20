@@ -40,10 +40,10 @@ public class CommentService {
 
     }
 
-    public List<CommentDto> list(Long id) {
+    public List<CommentDto> list(Long id, CommentTypeEnum commentTypeEnum) {
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria().andParentIdEqualTo(id)
-                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                .andTypeEqualTo(commentTypeEnum.getType());
         List<Comment> comments = commentMapper.selectByExample(commentExample);
         List<CommentDto> commentDtos = new ArrayList<CommentDto>();
         UserExample userExample = new UserExample();

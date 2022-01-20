@@ -1,8 +1,8 @@
 package com.example.communication.controller;
 
 import com.example.communication.dto.CommentDto;
-import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
+import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
 import com.example.communication.mapper.QuestionExtMapper;
@@ -38,7 +38,7 @@ public class QuestionController {
         model.addAttribute("question", question);
         incViewNum(id);
         // 查询评论列表
-        List<CommentDto> commentDtos = commentService.list(id);
+        List<CommentDto> commentDtos = commentService.list(id, CommentTypeEnum.QUESTION);
         System.out.println("comentDtos:" + commentDtos);
         model.addAttribute("comments", commentDtos);
         return "questionDetail";

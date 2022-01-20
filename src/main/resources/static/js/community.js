@@ -27,3 +27,8 @@ function commentPost(){
       dataType: "json"
     });
 }
+
+//展开二级评论
+function collapseComments(e){
+    $( "#div1").toggle();
+}

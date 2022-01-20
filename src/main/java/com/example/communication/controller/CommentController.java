@@ -1,6 +1,7 @@
 package com.example.communication.controller;
 
 import com.example.communication.dto.CommentCreateDto;
+import com.example.communication.dto.CommentDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
@@ -9,10 +10,12 @@ import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -45,5 +48,21 @@ public class CommentController {
         resultMap.put("retCode", 200);
         resultMap.put("retMsg", "评论成功");
         return resultMap;
+    }
+
+    @ResponseBody
+    @GetMapping("/comment/{id}")
+    public Object commentList(@PathVariable(name = "id") Long id,
+                              HttpServletRequest request) {
+        System.out.println("调用comment二级评论接口");
+        // 查询评论列表
+        List<CommentDto> subCommentDtos = commentService.list(id, CommentTypeEnum.COMMENT);
+        System.out.println("subComentDtos:" + subCommentDtos);
+        Map<Object, Object> resultMap = new HashMap<Object, Object>();
+        resultMap.put("retCode", 200);
+        resultMap.put("retMsg", "评论成功");
+        resultMap.put("")
+        return resultMap;
+
     }
 }
