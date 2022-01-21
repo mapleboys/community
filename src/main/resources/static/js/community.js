@@ -46,6 +46,8 @@ function subCommentPost(e){
 
         if(data.retCode == "200") {
 //                $("#commentForm").hide();
+//            window.location.reload();
+            $('#comment-' + e).toggle();
             window.location.reload();
         } else {
             var isLogin = confirm(data.retMsg);
@@ -120,6 +122,7 @@ $.ajax({
                 textarea.setAttribute("class", "form-control");
                 textarea.rows="2";
                 textarea.setAttribute("id", 'subComment_content-' + e.getAttribute("id"));
+                textarea.setAttribute("placeholder", "回复一下...");
                 input.appendChild(textarea);
 
                 var button = document.createElement("button");

@@ -41,6 +41,9 @@ public class QuestionController {
         List<CommentDto> commentDtos = commentService.list(id, CommentTypeEnum.QUESTION);
         System.out.println("comentDtos:" + commentDtos);
         model.addAttribute("comments", commentDtos);
+        // 查询相关问题
+        List<Question> relatedQuestions = questionDtoService.queryRelativeQuestion(id);
+        model.addAttribute("RelatedQuestions", relatedQuestions);
         return "questionDetail";
     }
     private void incViewNum(Long id) {

@@ -11,18 +11,16 @@ import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class CommentController {
     @Autowired
     CommentService commentService;
+
 
     @ResponseBody
     @PostMapping("/comment")
@@ -41,7 +39,8 @@ public class CommentController {
         }
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(comment.getGmtCreate());
-        comment.setLikeCount(0L);
+        comment.setLikeCount(0);
+        comment.setCommentCount(0);
         if (commentDto.getParentId() == null) {
             throw new CustomizeErrorException(CustomizeErrorCode.CommentReplyNotFound);
         }
@@ -51,6 +50,9 @@ public class CommentController {
         }
         comment.setType(commentDto.getType());
         commentService.insertComment(comment);
+        if(commentDto.getType() == 1) {
+            commentService.incCommentCount(commentDto.getParentId());
+        }
         ResultDto resultDto = ResultDto.okOf();
         return resultDto;
     }

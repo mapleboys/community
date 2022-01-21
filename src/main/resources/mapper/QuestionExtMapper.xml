@@ -51,4 +51,9 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
+  <select id="queryRelativeQuestion" parameterType="com.example.communication.model.Question" resultMap="ResultMapWithBLOBs">
+    select * from question where
+    id != #{id, jdbcType=BIGINT} and
+    tag REGEXP #{tag, jdbcType=VARCHAR}
+  </select>
 </mapper>

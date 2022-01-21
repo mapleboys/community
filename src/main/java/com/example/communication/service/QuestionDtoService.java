@@ -2,13 +2,14 @@ package com.example.communication.service;
 
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
-import com.example.communication.dto.QuestionQueryByIdDto;
 import com.example.communication.dto.QuestionQueryDto;
-import com.example.communication.exception.CustomizeErrorCode;
-import com.example.communication.exception.CustomizeErrorException;
+import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.mapper.QuestionMapper;
 import com.example.communication.mapper.UserMapper;
-import com.example.communication.model.*;
+import com.example.communication.model.Question;
+import com.example.communication.model.QuestionExample;
+import com.example.communication.model.User;
+import com.example.communication.model.UserExample;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,10 @@ public class QuestionDtoService {
     QuestionMapper questionMapper;
 
     @Autowired
-    UserMapper userMapper;
+    QuestionExtMapper questionExtMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     public PaginationDto list(Integer currentPage, Integer offset) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
@@ -122,5 +126,16 @@ public class QuestionDtoService {
             question.setGmtModified(System.currentTimeMillis());
             questionMapper.updateByPrimaryKey(question);
         }
+    }
+
+    // 查询相关问题
+    public List<Question> queryRelativeQuestion(Long id) {
+        Question question = questionMapper.selectByPrimaryKey(id);
+        String tag = question.getTag();
+        ArrayList<QuestionDto> questionDtos = new ArrayList<>();
+        String tagAfter = tag.replace(',', '|');
+        question.setTag(tagAfter);
+        List<Question> questions = questionExtMapper.queryRelativeQuestion(question);
+        return questions;
     }
 }

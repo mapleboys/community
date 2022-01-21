@@ -39,6 +39,8 @@
 
 [spring文档]https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#howto-customize-the-whitelabel-error-page
 
+[sql正则表达式]https://www.runoob.com/mysql/mysql-regexp.html
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置

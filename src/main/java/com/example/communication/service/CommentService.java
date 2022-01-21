@@ -2,6 +2,7 @@ package com.example.communication.service;
 
 import com.example.communication.dto.CommentDto;
 import com.example.communication.enums.CommentTypeEnum;
+import com.example.communication.mapper.CommentExtMapper;
 import com.example.communication.mapper.CommentMapper;
 import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.mapper.UserMapper;
@@ -23,6 +24,9 @@ public class CommentService {
 
     @Autowired
     QuestionExtMapper questionExtMapper;
+
+    @Autowired
+    CommentExtMapper commentExtMapper;
 
     @Autowired
     UserMapper userMapper;
@@ -56,5 +60,12 @@ public class CommentService {
             commentDtos.add(commentDto);
         }
         return commentDtos;
+    }
+
+    public void incCommentCount(Long parentId) {
+        Comment comment = new Comment();
+        comment.setId(parentId);
+        comment.setCommentCount(1);
+        commentExtMapper.incComment(comment);
     }
 }
