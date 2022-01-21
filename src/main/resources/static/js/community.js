@@ -12,6 +12,7 @@ function commentPost(){
             if(data.retCode == "200") {
 //                alert(data.retMsg);
                 $("#commentForm").hide();
+                window.location.reload();
             } else {
                 var isLogin = confirm(data.retMsg);
 
@@ -28,29 +29,33 @@ function commentPost(){
     });
 }
 // 二级评论
-function subCommentPost(){
-    var parent_id = $("#comment.id").val();
+function subCommentPost(e){
+    var parent_id = e;
+//    var parent_id = $("#comment.id").val();
     var type = 1;
-    var content = $('#subComment_content-' + parent_id).val()
+    var tt = '#subComment_content-' + parent_id;
+    var content = $('#subComment_content-' + parent_id).val();
     var datas = {"parentId":parent_id,"type":type, "content":content}
+
     $.ajax({
       type: "POST",
       url: "/comment",
       contentType : "application/json",
       data: JSON.stringify(datas),
       success: function(data){
-            if(data.retCode == "200") {
-//                $("#commentForm").hide();
-            } else {
-                var isLogin = confirm(data.retMsg);
-                if (data.retCode == "2023") {
-                    if(isLogin == true) {
-                        window.open("https://github.com/login/oauth/authorize?client_id=2bcd63e763491ab33831&redirect_uri=http://localhost:8887/callback&scope=user&state=0839");
-                        window.localStorage.setItem("isClose", "true");
-                    }
-                }
 
+        if(data.retCode == "200") {
+//                $("#commentForm").hide();
+            window.location.reload();
+        } else {
+            var isLogin = confirm(data.retMsg);
+            if (data.retCode == "2023") {
+                if(isLogin == true) {
+                    window.open("https://github.com/login/oauth/authorize?client_id=2bcd63e763491ab33831&redirect_uri=http://localhost:8887/callback&scope=user&state=0839");
+                    window.localStorage.setItem("isClose", "true");
+                }
             }
+        }
       },
       dataType: "json"
     });
@@ -114,13 +119,13 @@ $.ajax({
                 var textarea = document.createElement("textarea");
                 textarea.setAttribute("class", "form-control");
                 textarea.rows="2";
-                textarea.setAttribute("id", 'subComment_content-' + id);
+                textarea.setAttribute("id", 'subComment_content-' + e.getAttribute("id"));
                 input.appendChild(textarea);
 
                 var button = document.createElement("button");
                 button.setAttribute("type", "button");
                 button.setAttribute("class", "btn btn-success commentBut");
-                button.setAttribute("onclick", "subCommentPost()");
+                button.setAttribute("onclick", "subCommentPost(" + e.getAttribute("id") + ")");
                 button.innerHTML="提交";
                 input.appendChild(button);
                 input.setAttribute("style", "height:110px;");

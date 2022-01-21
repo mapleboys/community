@@ -36,9 +36,15 @@ public class CommentController {
         comment.setCommentator(user.getId());
 //        comment.setCommentator(22L);
         comment.setContent(commentDto.getContent());
+        if (commentDto.getContent() == null || commentDto.getContent().isEmpty()) {
+            throw new CustomizeErrorException(CustomizeErrorCode.CommentContentIsEmpty);
+        }
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(comment.getGmtCreate());
         comment.setLikeCount(0L);
+        if (commentDto.getParentId() == null) {
+            throw new CustomizeErrorException(CustomizeErrorCode.CommentReplyNotFound);
+        }
         comment.setParentId(commentDto.getParentId());
         if (commentDto.getType() == null || !CommentTypeEnum.isType(commentDto.getType())) {
             throw new CustomizeErrorException(CustomizeErrorCode.CommentTypeNotFound);
