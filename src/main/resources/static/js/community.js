@@ -151,23 +151,14 @@ $.ajax({
       },
       dataType: "json"
     });
-
-    // 输入框
-//    var input = document.createElement("div");
-////    var textarea = document.createElement("textarea");
-////    textarea.setAttribute("class", "form-control");
-////    textarea.rows="2";
-////    textarea.setAttribute("id", 'subComment_content-' + id);
-////    input.appendChild(textarea);
-//      input.innerHTML = '<textarea maxlength="5000" cols="80" rows="40"></textarea>' +
-//                            '<button></button>';
-//    debugger;
-////    var button = document.createElement("button");
-////    button.setAttribute("type", "button");
-////    button.setAttribute("class", "btn btn-success commentBut");
-////    button.setAttribute("onclick", "subCommentPost()");
-////    input.appendChild(button);
-////    debugger;
-//    commentDiv.appendChild(input);
     $('#comment-' + e.getAttribute("id")).toggle();
+}
+
+function showSelectTag() {
+    $("#select-tag").show();
+}
+
+function selectTag(e) {
+
+
 }

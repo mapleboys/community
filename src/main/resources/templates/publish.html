@@ -28,7 +28,34 @@
                 </div>
                 <div class="form-group">
                     <label for="title">添加标签</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name = "tag" placeholder="输入标签,以,分割">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name = "tag" onclick="showSelectTag()">
+                </div>
+                <div id="select-tag" class="publish-tag-tab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" th:each="selectCategory,selectCategoryStat: ${tags}"
+                            th:class="${selectCategoryStat.first ? 'active':''}" >
+                            <a th:href="${'#'+selectCategory.categoryName}" aria-controls="home" role="tab"
+                               data-toggle="tab" th:text="${selectCategory.categoryName}"></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" style="margin:15px">
+                        <div role="tabpanel" th:id="${selectCategory.categoryName}"
+                             th:each="selectCategory: ${tags}"
+                             th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}" >
+                                <span  >
+
+                                    <span th:each="selectTag: ${selectCategory.categoryTags}" class ="label label-info"
+                                          style="margin-right:15px;font-size:15px;" aria-label="white-space:normal;">
+                                        <label white-space="none"></label>
+                                        <span class="glyphicon glyphicon-bookmark"></span>
+                                    <span class="community-tag" onclick="selectTag(this)"
+                                          th:data-tag="${selectTag}"
+                                          th:text="${' '+selectTag}">
+                                    </span>
+                                </span>
+                                </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="container-fluid main" style ="background-color:white">
                     <div class="row">

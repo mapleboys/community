@@ -3,6 +3,7 @@ package com.example.communication.service;
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.dto.QuestionDto;
 import com.example.communication.dto.QuestionQueryDto;
+import com.example.communication.dto.TagDto;
 import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.mapper.QuestionMapper;
 import com.example.communication.mapper.UserMapper;

@@ -1,7 +1,9 @@
 package com.example.communication.controller;
 
 
+import com.example.communication.cache.TagCache;
 import com.example.communication.dto.QuestionDto;
+import com.example.communication.dto.TagDto;
 import com.example.communication.model.Question;
 import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
@@ -14,12 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class PublishController {
 
     @GetMapping("/publish")
-    public String publish(){
+    public String publish(Model model){
+        // 标签目录
+        List<TagDto> tagDtos = TagCache.get();
+        model.addAttribute("tags", tagDtos);
         return "publish";
     }
 
@@ -34,6 +40,7 @@ public class PublishController {
             @RequestParam(value = "id", required = false) Long id,
             HttpServletRequest request,
             Model model) {
+
 
         model.addAttribute("title", title);
         model.addAttribute("description", description);
@@ -52,7 +59,12 @@ public class PublishController {
             model.addAttribute("error", "标签不能为空");
             return "publish";
         }
-
+        String invalidStr = TagCache.invalidStr(tag);
+        if (!invalidStr.isEmpty()) {
+            model.addAttribute("error", "标签内容含有非法字符：" +
+                    invalidStr);
+            return "publish";
+        }
 
         System.out.println("调用pulish的post请求");
 
@@ -88,6 +100,8 @@ public class PublishController {
         model.addAttribute("description", questionDto.getDescription());
         model.addAttribute("tag", questionDto.getTag());
         model.addAttribute("id", id);
+
+
         return "publish";
     }
 }
