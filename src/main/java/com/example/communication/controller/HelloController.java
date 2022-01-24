@@ -25,6 +25,8 @@ public class HelloController {
         PaginationDto pagination = questionDtoService.list(currentPage, offset);
         System.out.println(pagination);
         model.addAttribute("pagination", pagination);
+        // 未读通知数
+        model.addAttribute("unreadCount", 12);
         return "index";
     }
 }

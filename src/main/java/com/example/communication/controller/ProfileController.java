@@ -40,6 +40,7 @@ public class ProfileController {
         PaginationDto pagination = questionDtoService.list(user.getId(), currentPage, offset);
         model.addAttribute("pagination");
         model.addAttribute("pagination", pagination);
+        model.addAttribute("unreadCount", 12);
         return "profile";
     }
 }
