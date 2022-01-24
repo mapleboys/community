@@ -7,6 +7,7 @@
     <link rel = "stylesheet" href="/css/bootstrap-theme.min.css"/>
     <script src = "/js/jquery-3.6.0.min.js"></script>
     <script src = "/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src = "/js/community.js" type="application/javascript"></script>
 </head>
 <body style = "background-color:#efefef">
 <div th:insert="~{navigation :: nav}"></div>
@@ -42,20 +43,13 @@
                         <div role="tabpanel" th:id="${selectCategory.categoryName}"
                              th:each="selectCategory: ${tags}"
                              th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}" >
-
-
-                                <span th:each="selectTag: ${selectCategory.categoryTags}" class ="label label-info"
-                                      style="margin-right:15px;font-size:10px;white-space:normal;margin-block-end:auto;">
-                                    <span>
-                                        <span class="glyphicon glyphicon-bookmark"></span>
-                                        <span class="community-tag" onclick="selectTag(this)"
-                                              th:data-tag="${selectTag}"
-                                              th:text="${' '+selectTag}">
-                                        </span>
-                                    </span>
-
-                                </span>
-
+                            <span th:each="selectTag: ${selectCategory.categoryTags}" class ="label label-info"
+                                  style="margin-right:15px;font-size:10px;white-space:normal;margin-block-end:auto;">
+                                <a class="community-tag glyphicon glyphicon-bookmark button" onclick="selectTag(this)"
+                                      th:data-tag="${selectTag}"
+                                      th:text="${' '+selectTag}">
+                                </a>
+                            </span>
                         </div>
                     </div>
                 </div>
