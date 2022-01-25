@@ -4,10 +4,7 @@ import com.example.communication.dto.NotificationDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.enums.NotifyStatusEnum;
 import com.example.communication.enums.NotifyTypeEnum;
-import com.example.communication.mapper.CommentMapper;
-import com.example.communication.mapper.NotificationMapper;
-import com.example.communication.mapper.QuestionMapper;
-import com.example.communication.mapper.UserMapper;
+import com.example.communication.mapper.*;
 import com.example.communication.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +24,8 @@ public class NotifyService {
     QuestionMapper questionMapper;
     @Autowired
     CommentMapper commentMapper;
+    @Autowired
+    NotificationExtMapper notificationExtMapper;
 
     public void incNotifyRecord(Comment comment) {
         Notification notification = new Notification();
@@ -69,9 +68,9 @@ public class NotifyService {
     }
 
     public List<NotificationDto> list(Long id) {
-        NotificationExample notificationExample = new NotificationExample();
-        notificationExample.createCriteria().andReceiverEqualTo(id);
-        List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
+        Notification notification1 = new Notification();
+        notification1.setReceiver(id);
+        List<Notification> notifications = notificationExtMapper.selectById(notification1);
         System.out.println("notifications:" + notifications);
         ArrayList<NotificationDto> notificationDtos = new ArrayList<>();
         for (Notification notification : notifications) {

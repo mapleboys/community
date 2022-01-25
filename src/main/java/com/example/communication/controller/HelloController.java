@@ -39,7 +39,7 @@ public class HelloController {
             NotificationExample notificationExample = new NotificationExample();
             notificationExample.createCriteria().andReceiverEqualTo(user.getId());
             List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
-            int size = notifications.size();
+            Long size = notifications.stream().filter(t->t.getStatus()==0).count();
             model.addAttribute("unreadCount", size);
         }
         return "index";
