@@ -1,6 +1,10 @@
 package com.example.communication.controller;
 
 import com.example.communication.dto.PaginationDto;
+import com.example.communication.mapper.NotificationMapper;
+import com.example.communication.model.Notification;
+import com.example.communication.model.NotificationExample;
+import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +13,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 
 @Controller
 public class HelloController {
     @Autowired
     QuestionDtoService questionDtoService;
+    @Autowired
+    NotificationMapper notificationMapper;
 
     @GetMapping("/")
     public String hello(HttpServletRequest request,
@@ -25,8 +32,16 @@ public class HelloController {
         PaginationDto pagination = questionDtoService.list(currentPage, offset);
         System.out.println(pagination);
         model.addAttribute("pagination", pagination);
-        // 未读通知数
-        model.addAttribute("unreadCount", 12);
+
+        // 传入未读通知数
+        User user = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            NotificationExample notificationExample = new NotificationExample();
+            notificationExample.createCriteria().andReceiverEqualTo(user.getId());
+            List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
+            int size = notifications.size();
+            model.addAttribute("unreadCount", size);
+        }
         return "index";
     }
 }

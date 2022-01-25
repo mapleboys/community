@@ -1,7 +1,11 @@
 package com.example.communication.controller;
 
 import com.example.communication.dto.PaginationDto;
+import com.example.communication.mapper.NotificationMapper;
+import com.example.communication.model.Notification;
+import com.example.communication.model.NotificationExample;
 import com.example.communication.model.User;
+import com.example.communication.service.NotifyService;
 import com.example.communication.service.QuestionDtoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +15,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class ProfileController {
     @Autowired
     QuestionDtoService questionDtoService;
+    @Autowired
+    NotificationMapper notificationMapper;
+    @Autowired
+    NotifyService notifyService;
 
     @GetMapping("/profile/{action}")
     public String profile(@PathVariable(name = "action") String action,
@@ -40,7 +49,16 @@ public class ProfileController {
         PaginationDto pagination = questionDtoService.list(user.getId(), currentPage, offset);
         model.addAttribute("pagination");
         model.addAttribute("pagination", pagination);
-        model.addAttribute("unreadCount", 12);
+        // 传入通知列表数据、未读数据
+        NotificationExample notificationExample = new NotificationExample();
+        notificationExample.createCriteria().andReceiverEqualTo(user.getId());
+        List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
+        int size = notifications.size();
+        model.addAttribute("unreadCount", size);
+        model.addAttribute("notifications", notifications);
+
         return "profile";
     }
+
+
 }

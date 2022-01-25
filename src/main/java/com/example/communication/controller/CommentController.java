@@ -6,6 +6,7 @@ import com.example.communication.dto.ResultDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.exception.CustomizeErrorCode;
 import com.example.communication.exception.CustomizeErrorException;
+import com.example.communication.mapper.CommentMapper;
 import com.example.communication.model.Comment;
 import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
@@ -23,6 +24,8 @@ public class CommentController {
     CommentService commentService;
     @Autowired
     NotifyService notifyService;
+    @Autowired
+    CommentMapper commentMapper;
 
     @ResponseBody
     @PostMapping("/comment")
@@ -35,7 +38,6 @@ public class CommentController {
         }
         User user = (User) request.getSession().getAttribute("user");
         comment.setCommentator(user.getId());
-//        comment.setCommentator(22L);
         comment.setContent(commentDto.getContent());
         if (commentDto.getContent() == null || commentDto.getContent().isEmpty()) {
             throw new CustomizeErrorException(CustomizeErrorCode.CommentContentIsEmpty);
@@ -60,8 +62,8 @@ public class CommentController {
         }
 
         // 增加通知记录
-        notifyService.incNotifyRecord()
 
+        notifyService.incNotifyRecord(comment);
 
         ResultDto resultDto = ResultDto.okOf();
         return resultDto;
