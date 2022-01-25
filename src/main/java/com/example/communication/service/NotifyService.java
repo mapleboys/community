@@ -1,5 +1,6 @@
 package com.example.communication.service;
 
+import com.example.communication.dto.NotificationDto;
 import com.example.communication.enums.CommentTypeEnum;
 import com.example.communication.enums.NotifyStatusEnum;
 import com.example.communication.enums.NotifyTypeEnum;
@@ -7,12 +8,13 @@ import com.example.communication.mapper.CommentMapper;
 import com.example.communication.mapper.NotificationMapper;
 import com.example.communication.mapper.QuestionMapper;
 import com.example.communication.mapper.UserMapper;
-import com.example.communication.model.Comment;
-import com.example.communication.model.Notification;
-import com.example.communication.model.Question;
-import com.example.communication.model.User;
+import com.example.communication.model.*;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class NotifyService {
@@ -64,5 +66,22 @@ public class NotifyService {
             parentId = commentMapper.selectByPrimaryKey(notification.getOuterid()).getParentId();
         }
         return parentId;
+    }
+
+    public List<NotificationDto> list(Long id) {
+        NotificationExample notificationExample = new NotificationExample();
+        notificationExample.createCriteria().andReceiverEqualTo(id);
+        List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
+        System.out.println("notifications:" + notifications);
+        ArrayList<NotificationDto> notificationDtos = new ArrayList<>();
+        for (Notification notification : notifications) {
+            NotificationDto notificationDto = new NotificationDto();
+            BeanUtils.copyProperties(notification, notificationDto);
+            Integer type = notificationDto.getType();
+            String actionByType = NotifyTypeEnum.getActionByType(type);
+            notificationDto.setNotifyAction(actionByType);
+            notificationDtos.add(notificationDto);
+        }
+        return notificationDtos;
     }
 }

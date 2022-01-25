@@ -58,22 +58,10 @@ public class ProfileController {
         model.addAttribute("pagination");
         model.addAttribute("pagination", pagination);
         // 传入通知列表数据、未读数据
-        NotificationExample notificationExample = new NotificationExample();
-        notificationExample.createCriteria().andReceiverEqualTo(user.getId());
-        List<Notification> notifications = notificationMapper.selectByExample(notificationExample);
-        System.out.println("notifications:" + notifications);
-        ArrayList<NotificationDto> notificationDtos = new ArrayList<>();
-        for (Notification notification : notifications) {
-            NotificationDto notificationDto = new NotificationDto();
-            BeanUtils.copyProperties(notification, notificationDto);
-            Integer type = notificationDto.getType();
-            String actionByType = NotifyTypeEnum.getActionByType(type);
-            notificationDto.setNotifyAction(actionByType);
-            notificationDtos.add(notificationDto);
-        }
+        List<NotificationDto> notificationDtos = notifyService.list(user.getId());
         System.out.println("notificationDtos:" +notificationDtos);
-        int size = notifications.size();
-        model.addAttribute("unreadCount", size);
+        long count = notificationDtos.stream().filter(t -> t.getStatus() == 0).count();
+        model.addAttribute("unreadCount", count);
         model.addAttribute("notifications", notificationDtos);
 
         return "profile";
