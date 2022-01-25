@@ -8,6 +8,7 @@
     <link rel = "stylesheet" href="/css/community.css"/>
     <script src = "/js/jquery-3.6.0.min.js"></script>
     <script src = "/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src = "/js/community.js" type="application/javascript"></script>
 </head>
 <body style="background-color:#DBDBDB">
 <div th:insert="~{navigation :: nav}"></div>
@@ -73,53 +74,24 @@
                 </ul>
             </nav>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
-            <h2><span th:text="${sectionName}"></span></h2>
-            <hr>
-            <div class="media" th:each="notification:${notifications}">
-
-                <div class="media-body">
-
-                    <span>
-                        <span th:text="${notification.notifierName} + '个评论 •' + ${question.viewAccount} + '次浏览 •发布于'
-                     + ${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm:ss')}">•
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
+                <h2><span th:text="${sectionName}"></span></h2>
+                <hr>
+                <ul class="list-group" th:each="notification:${notifications}">
+                    <li >
+                        <span th:text="${notification.notifierName} + ${notification.notifyAction}" style="font-size:15px">
                         </span>
-                        <a th:href="@{'/question/'+${notification.outerid}}">
-                            <h4 class="media-heading" th:text="${notification.outerTitle}"></h4>
+
+                        <a th:href="@{'/notification/'+${notification.id}}"  >
+                        <h5 class="media-heading" th:text="${notification.outertitle}" style="display:inline-block"></h5>
                         </a>
-                    </span>
-                </span>
-                </div>
-            </div>
-            <nav aria-label="Page navigation" >
-                <ul class="pagination">
-                    <li th:if="${pagination.showFirstPage}">
-                        <a th:href="@{'/profile/'+${section}(currentPage=${1})}" aria-label="First">
-                            <span aria-hidden="true">&lt;&lt;</span>
-                        </a>
-                    </li>
-                    <li th:if="${pagination.showPreviousPage}">
-                        <a th:href="@{'/profile/'+${section}(currentPage=${pagination.currentPage-1})}" aria-label="Previous">
-                            <span aria-hidden="true">&lt;</span>
-                        </a>
-                    </li>
-                    <li th:each="page:${pagination.pageList}" th:class="${pagination.currentPage == page}?'active':''">
-                        <a th:href="@{'/profile/'+${section}(currentPage=${page})}" th:text="${page}" >
-                        </a>
-                    </li>
-                    <li th:if="${pagination.showNextPage}">
-                        <a th:href="@{'/profile/'+${section}(currentPage=${pagination.currentPage + 1})}" aria-label="Next">
-                            <span aria-hidden="true" >&gt;</span>
-                        </a>
-                    </li>
-                    <li th:if="${pagination.showEndPage}">
-                        <a th:href="@{'/profile/'+${section}(currentPage=${pagination.totalPage})}" aria-label="End">
-                            <span aria-hidden="true">&gt;&gt;</span>
-                        </a>
+
+                        <span class="label label-danger" th:if="${notification.status == 0}">未读</span>
+                        <span class="label label-success" th:if="${notification.status == 1}">已读</span>
+                        <span class="pull-right" th:text="${#dates.format(notification.gmtCreate,'yyyy-MM-dd HH:mm:ss')}" style="font-size:8px"></span>
                     </li>
                 </ul>
-            </nav>
-        </div>
+            </div>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="list-group section">

@@ -187,4 +187,11 @@ function selectTag(e) {
         $("#tag").val(value);
     }
 
+//更新通知为已读标志
+function updateReadNum(e) {
+    var value = e.getAttribute("id");
+    debugger;
+    var value = e.getAttribute("id");
+}
+
 }

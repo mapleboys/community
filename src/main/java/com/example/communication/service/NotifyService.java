@@ -1,6 +1,7 @@
 package com.example.communication.service;
 
 import com.example.communication.enums.CommentTypeEnum;
+import com.example.communication.enums.NotifyStatusEnum;
 import com.example.communication.enums.NotifyTypeEnum;
 import com.example.communication.mapper.CommentMapper;
 import com.example.communication.mapper.NotificationMapper;
@@ -50,5 +51,18 @@ public class NotifyService {
             notification.setOutertitle(commentPar.getContent());
         }
         notificationMapper.insert(notification);
+    }
+    //更新通知阅读状态
+    public Long read(Long id) {
+        Notification notification = notificationMapper.selectByPrimaryKey(id);
+        if(notification.getStatus() == NotifyStatusEnum.unread.getValue()) {
+            notification.setStatus(NotifyStatusEnum.read.getValue());
+            notificationMapper.updateByPrimaryKey(notification);
+        }
+        Long parentId = notification.getOuterid();
+        if (notification.getType() == CommentTypeEnum.COMMENT.getType()) {
+            parentId = commentMapper.selectByPrimaryKey(notification.getOuterid()).getParentId();
+        }
+        return parentId;
     }
 }

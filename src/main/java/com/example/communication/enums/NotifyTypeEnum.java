@@ -18,7 +18,7 @@ public enum NotifyTypeEnum {
         return type;
     }
 
-    public String getActionByType(Integer type) {
+    public static String getActionByType(Integer type) {
         for (NotifyTypeEnum value : NotifyTypeEnum.values()) {
             if (type == value.getType()) {
                 return value.getAction();

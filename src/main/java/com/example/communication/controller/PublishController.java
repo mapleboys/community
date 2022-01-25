@@ -101,7 +101,6 @@ public class PublishController {
         model.addAttribute("tag", questionDto.getTag());
         model.addAttribute("id", id);
 
-
         return "publish";
     }
 }

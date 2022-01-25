@@ -62,7 +62,6 @@ public class CommentController {
         }
 
         // 增加通知记录
-
         notifyService.incNotifyRecord(comment);
 
         ResultDto resultDto = ResultDto.okOf();
