@@ -38,7 +38,10 @@
                             height: 450,
                             // markdown: "xxxx",     // dynamic set Markdown text
                             tabSize : 4,
-                            path : "editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+                            path : "editor.md/lib/",  // Autoload modules mode, codemirror, marked... dependents libs path
+                            imageUpload : true,          // Enable/disable upload
+                            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                            imageUploadURL: "/file/upload"             // Upload url
                         });
                     });
                 </script>

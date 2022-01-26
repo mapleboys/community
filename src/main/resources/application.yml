@@ -26,3 +26,12 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+ucloud:
+  bucketName: communitybbs
+  publicKey: TOKEN_4c2dea10-34c1-4a20-9ac9-4aeb6620ac40
+  privateKey: a83b63b5-ad68-4af9-bd22-1930f56b6bd6
+  region: cn-bj
+  proxySuffix: ufileos.com
+  expiresDuration: 2628000
+
+

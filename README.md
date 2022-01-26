@@ -41,6 +41,10 @@
 
 [sql正则表达式]https://www.runoob.com/mysql/mysql-regexp.html
 
+[ucloud对象存储api]https://github.com/ucloud/ufile-sdk-java
+
+[markdown editor]https://github.com/pandao/editor.md
+
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
 1.1 properties配置
