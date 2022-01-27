@@ -24,6 +24,7 @@
 				<db.url>jdbc:mysql://localhost:3306/community</db.url>
 				<db.user>root</db.user>
 				<db.password>rootroot</db.password>
+				<db.version>8.0.27</db.version>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -35,6 +36,7 @@
 				<db.url>jdbc:mysql://localhost:3306/community</db.url>
 				<db.user>root</db.user>
 				<db.password>rootroot</db.password>
+				<db.version>8.0.28</db.version>
 			</properties>
 		</profile>
 	</profiles>
@@ -80,7 +82,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.27</version>
+			<version>${db.version}</version>
 		</dependency>
 
 		<dependency>
@@ -127,7 +129,7 @@
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
-						<version>8.0.27</version>
+						<version>${db.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -147,7 +149,7 @@
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
-						<version>8.0.27</version>
+						<version>${db.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
