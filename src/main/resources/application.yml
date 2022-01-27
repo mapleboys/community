@@ -3,6 +3,7 @@ server:
   error:
     whitelabel:
       enabled: false
+
 github:
   client:
     id: 2bcd63e763491ab33831
@@ -20,6 +21,8 @@ spring:
     enabled: true
     baseline-on-migrate: true
     clean-on-validation-error: true
+  profiles:
+    active: dev #激活生产环境配置
 mybatis:
   type-aliases-package: com.example.communication.model
   mapper-locations: classpath:mapper/*.xml

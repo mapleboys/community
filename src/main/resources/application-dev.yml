@@ -1,0 +1,14 @@
+server:
+  port: 8887
+github:
+  redirect:
+    uri: http://localhost:8887/callback
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/community
+    username: root
+    password: rootroot
+
+
+

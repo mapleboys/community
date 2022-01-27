@@ -1,0 +1,20 @@
+server:
+  port: 80
+  error:
+    whitelabel:
+      enabled: false
+github:
+  client:
+    id: 2bcd63e763491ab33831
+    secret: 5fe5be9b000bb422d77c9c769921ed3290778093
+  redirect:
+    uri: http://117.50.177.50:80/callback
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/community
+    username: root
+    password: rootroot
+
+
+
