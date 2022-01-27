@@ -56,4 +56,19 @@
     id != #{id, jdbcType=BIGINT} and
     tag REGEXP #{tag, jdbcType=VARCHAR}
   </select>
+
+  <select id="queryBySearch" parameterType="com.example.communication.dto.QuestionQueryDto" resultMap="ResultMapWithBLOBs">
+    select * from question
+    <if test="search != null">
+      where title REGEXP #{search}
+    </if>
+    limit #{limit} offset #{offset}
+  </select>
+
+  <select id="countBySearch" parameterType="com.example.communication.dto.QuestionQueryDto" resultType="java.lang.Integer">
+    select count(*) from question
+    <if test="search != null">
+      where title REGEXP #{search}
+    </if>
+  </select>
 </mapper>

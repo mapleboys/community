@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class QuestionQueryDto {
-    private Integer rows;
+    private Integer limit;
     private Integer offset;
+    private String search;
 }

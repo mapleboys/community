@@ -30,19 +30,20 @@ public class QuestionDtoService {
     @Autowired
     private UserMapper userMapper;
 
-    public PaginationDto list(Integer currentPage, Integer offset) {
+    public PaginationDto list(Integer currentPage, Integer limit, String search) {
         QuestionQueryDto questionQueryDto = new QuestionQueryDto();
         PaginationDto paginationDto = new PaginationDto();
-
+        // 处理字符串
+        String regexpSearch = regexpStr(search);
         //计算总问题数
-        QuestionExample questionExample = new QuestionExample();
-        questionExample.createCriteria().andIdIsNotNull();
-        int size = questionMapper.selectByExample(questionExample).size();
+        questionQueryDto.setSearch(regexpSearch);
+        int size = questionExtMapper.countBySearch(questionQueryDto);
+
         Integer totalPage;
-        if(size%offset == 0) {
-            totalPage = size/offset;
+        if(size%limit == 0) {
+            totalPage = size/limit;
         }else {
-            totalPage = (size/offset + 1);
+            totalPage = (size/limit + 1);
         }
         if(currentPage < 1) {
             currentPage = 1;
@@ -51,9 +52,9 @@ public class QuestionDtoService {
             currentPage = totalPage;
         }
         // 查询问题列表
-        List<Question> questions = questionMapper.
-                selectByExampleWithRowbounds(null,
-                        new RowBounds((currentPage - 1)*offset, offset));
+        questionQueryDto.setOffset((currentPage - 1)*limit);
+        questionQueryDto.setLimit(limit);
+        List<Question> questions = questionExtMapper.queryBySearch(questionQueryDto);
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();
         for(Question question:questions) {
             Long creator = question.getCreator();
@@ -67,8 +68,23 @@ public class QuestionDtoService {
         }
         paginationDto.setQuestionList(questionDtos);
 
-        paginationDto.setPagination(size, currentPage, offset);
+        paginationDto.setPagination(size, currentPage, limit);
         return paginationDto;
+    }
+
+    // 字符串用竖线分割
+    private String regexpStr(String search) {
+        String a1 = "";
+        String a2 = null;
+        if (search != null) {
+            for(String a:search.split("\\s+")){
+                a1 = a1 + a + "|";
+            }
+            if (a1.substring(a1.length() - 1).equals("|")) {
+                a2 = a1.substring(0,a1.length()-1);
+            }
+        }
+        return a2;
     }
 
     public PaginationDto list(Long id, Integer currentPage, Integer offset) {

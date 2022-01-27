@@ -98,11 +98,11 @@
                 <div class="form-group" id="commentForm">
                     <dt class="pull-left" style="margin-bottom:15px">
                         <a>
-                            <img class="media-object img-thumbnail" th:src="${question.user.avatarUrl}" style="width:40px;height:40px">
+                            <img class="media-object img-thumbnail" th:src="${session.user != null ? session.user.avatarUrl:'/image/defaultAvatar.png'}" style="width:40px;height:40px">
                         </a>
                     </dt>
                     <dd class="pull-left" >
-                        <span class="media-heading"  th:text="${question.user.name}" style="margin:25px"></span>
+                        <span class="media-heading"  th:text="${session.user != null ? session.user.name:'匿名用户'}" style="margin:25px"></span>
                     </dd>
                     <textarea class="form-control" rows="5" id="comment_content" name="comment_content" placeholder="评论一下..."></textarea>
                     <input type="hidden" id = "parent_id" th:value="${question.id}">

@@ -22,7 +22,7 @@ public class UserService {
         userExample.createCriteria().andAccountIdEqualTo(user.getAccountId());
         List<User> users = userMapper.selectByExample(userExample);
 
-        if (users != null && users.get(0) != null) {
+        if (users != null && users.size() > 0) {
             // 更新用户
             user.setId(users.get(0).getId());
             userMapper.updateByExample(user, userExample);
@@ -30,7 +30,5 @@ public class UserService {
             // 插入用户
             userMapper.insert(user);
         }
-
-
     }
 }

@@ -27,9 +27,10 @@ public class HelloController {
     public String hello(HttpServletRequest request,
                         @RequestParam(name = "currentPage", defaultValue = "1") Integer currentPage,
                         @RequestParam(name = "offset", defaultValue = "5") Integer offset,
+                        @RequestParam(name = "search", required = false) String search,
                         Model model){
 
-        PaginationDto pagination = questionDtoService.list(currentPage, offset);
+        PaginationDto pagination = questionDtoService.list(currentPage, offset, search);
         System.out.println(pagination);
         model.addAttribute("pagination", pagination);
 

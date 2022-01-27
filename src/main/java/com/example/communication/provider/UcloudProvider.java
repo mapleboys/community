@@ -52,17 +52,16 @@ public class UcloudProvider {
 
         String mimeType = MimeTypeUtil.getMimeType(fileName);
         String s1 = split(fileName);
-        String s = UUID.randomUUID().toString();
+        String s = UUID.randomUUID().toString() + "." + s1;
         // 上传
         try {
             PutObjectResultBean response = UfileClient.object(OBJECT_AUTHORIZER, config)
                     .putObject(fileInputStream, fileInputStream.available(), mimeType)
-                    .nameAs(s+s1)
+                    .nameAs(s)
                     .toBucket(bucketName)
                     .setOnProgressListener(new OnProgressListener() {
                         @Override
                         public void onProgress(long bytesWritten, long contentLength) {
-
                         }
                     })
                     .execute();
@@ -77,7 +76,7 @@ public class UcloudProvider {
         String url = "";
         try {
             url = UfileClient.object(OBJECT_AUTHORIZER, config)
-                    .getDownloadUrlFromPrivateBucket(s+s1, bucketName, expiresDuration)
+                    .getDownloadUrlFromPrivateBucket(s, bucketName, expiresDuration)
                     .createUrl();
         } catch (UfileParamException e) {
             e.printStackTrace();
