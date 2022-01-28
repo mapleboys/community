@@ -23,7 +23,7 @@
 			<properties>
 				<db.url>jdbc:mysql://localhost:3306/community</db.url>
 				<db.user>root</db.user>
-				<db.password>rootroot</db.password>
+				<db.password>Rootroot123!</db.password>
 				<db.version>8.0.27</db.version>
 			</properties>
 
