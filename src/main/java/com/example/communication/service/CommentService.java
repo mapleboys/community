@@ -7,6 +7,7 @@ import com.example.communication.mapper.CommentMapper;
 import com.example.communication.mapper.QuestionExtMapper;
 import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class CommentService {
     @Autowired
     CommentMapper commentMapper;

@@ -6,6 +6,7 @@ import com.example.communication.model.Notification;
 import com.example.communication.model.NotificationExample;
 import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import java.util.List;
 
 
 @Controller
+@Slf4j
 public class HelloController {
     @Autowired
     QuestionDtoService questionDtoService;
@@ -31,7 +33,7 @@ public class HelloController {
                         Model model){
 
         PaginationDto pagination = questionDtoService.list(currentPage, offset, search);
-        System.out.println(pagination);
+        log.info(pagination.toString());
         model.addAttribute("pagination", pagination);
 
         // 传入未读通知数

@@ -7,6 +7,7 @@ import com.example.communication.dto.TagDto;
 import com.example.communication.model.Question;
 import com.example.communication.model.User;
 import com.example.communication.service.QuestionDtoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
+@Slf4j
 public class PublishController {
 
     @GetMapping("/publish")
@@ -66,7 +68,7 @@ public class PublishController {
             return "publish";
         }
 
-        System.out.println("调用pulish的post请求");
+        log.info("调用pulish的post请求");
 
         User user = (User) request.getSession().getAttribute("user");
         // 返回错误信息
@@ -74,7 +76,7 @@ public class PublishController {
             model.addAttribute("error", "用户未登录");
             return "publish";
         }
-        System.out.println("开始插入数据");
+        log.info("开始插入数据");
         // 插入question数据
         Question question = new Question();
         question.setTitle(title);

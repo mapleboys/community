@@ -6,6 +6,7 @@ import com.example.communication.enums.NotifyStatusEnum;
 import com.example.communication.enums.NotifyTypeEnum;
 import com.example.communication.mapper.*;
 import com.example.communication.model.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class NotifyService {
 
     @Autowired
@@ -71,7 +73,7 @@ public class NotifyService {
         Notification notification1 = new Notification();
         notification1.setReceiver(id);
         List<Notification> notifications = notificationExtMapper.selectById(notification1);
-        System.out.println("notifications:" + notifications);
+        log.info("notifications:" + notifications);
         ArrayList<NotificationDto> notificationDtos = new ArrayList<>();
         for (Notification notification : notifications) {
             NotificationDto notificationDto = new NotificationDto();

@@ -3,6 +3,7 @@ package com.example.communication.interceptor;
 import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.User;
 import com.example.communication.model.UserExample;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Service
+@Slf4j
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired(required = false)
     UserMapper userMapper;
@@ -26,7 +28,7 @@ public class SessionInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         request.getServletContext().setAttribute("githubRedirectUri", githubRedirectUri);
         Cookie[] cookies = request.getCookies();
-        System.out.println("判断000");
+        log.info("判断000");
         // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面
         if (cookies != null) {
             for (Cookie cookie : cookies) {

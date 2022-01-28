@@ -15,6 +15,7 @@ import cn.ucloud.ufile.exception.UfileServerException;
 import cn.ucloud.ufile.http.OnProgressListener;
 import cn.ucloud.ufile.util.MimeTypeUtil;
 import com.example.communication.dto.UploadResDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,7 @@ import java.io.*;
 import java.util.UUID;
 
 @Component
+@Slf4j
 public class UcloudProvider {
 
     @Value("${ucloud.publicKey}")

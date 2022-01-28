@@ -5,6 +5,7 @@ import com.example.communication.dto.GithubUser;
 import com.example.communication.model.User;
 import com.example.communication.provider.GitHubProvider;
 import com.example.communication.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -16,8 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
-
 @Controller
+@Slf4j
 public class AuthorizeController {
 
     @Autowired
@@ -47,7 +48,7 @@ public class AuthorizeController {
         GithubUser githubUser = gitHubProvider.getUser(accessToken);
 
         if (githubUser != null && !String.valueOf(githubUser.getId()).equals("0")) {
-            System.out.println("开始");
+            log.info("开始");
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);

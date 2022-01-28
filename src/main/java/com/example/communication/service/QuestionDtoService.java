@@ -11,6 +11,7 @@ import com.example.communication.model.Question;
 import com.example.communication.model.QuestionExample;
 import com.example.communication.model.User;
 import com.example.communication.model.UserExample;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class QuestionDtoService {
     @Autowired
     QuestionMapper questionMapper;
@@ -52,7 +54,8 @@ public class QuestionDtoService {
             currentPage = totalPage;
         }
         // 查询问题列表
-        questionQueryDto.setOffset((currentPage - 1)*limit);
+        Integer offset = currentPage == 0 ? 0:(currentPage - 1)*limit;
+        questionQueryDto.setOffset(offset);
         questionQueryDto.setLimit(limit);
         List<Question> questions = questionExtMapper.queryBySearch(questionQueryDto);
         ArrayList<QuestionDto> questionDtos = new ArrayList<>();

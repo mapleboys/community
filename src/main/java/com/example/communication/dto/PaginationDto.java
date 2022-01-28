@@ -28,8 +28,20 @@ public class PaginationDto {
         this.setTotalPage(totalPage);
 
         this.setCurrentPage(currentPage);
+
         // 页面展示的页码列表
         ArrayList<Integer> integers = new ArrayList<>();
+        // 没有数据的情况
+        if (size == 0) {
+            integers.add(1);
+            this.setPageList(integers);
+            this.setCurrentPage(1);
+            this.setShowEndPage(false);
+            this.setShowFirstPage(false);
+            this.setShowNextPage(false);
+            this.setShowPreviousPage(false);
+            return;
+        }
         integers.add(currentPage);
         for(int i = 1; i < 3; i++) {
             if (currentPage - i > 0) {

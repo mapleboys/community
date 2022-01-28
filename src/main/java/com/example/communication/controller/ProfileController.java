@@ -11,6 +11,7 @@ import com.example.communication.model.NotificationExample;
 import com.example.communication.model.User;
 import com.example.communication.service.NotifyService;
 import com.example.communication.service.QuestionDtoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@Slf4j
 public class ProfileController {
     @Autowired
     QuestionDtoService questionDtoService;
@@ -59,7 +61,7 @@ public class ProfileController {
         model.addAttribute("pagination", pagination);
         // 传入通知列表数据、未读数据
         List<NotificationDto> notificationDtos = notifyService.list(user.getId());
-        System.out.println("notificationDtos:" +notificationDtos);
+        log.info("notificationDtos:" +notificationDtos);
         long count = notificationDtos.stream().filter(t -> t.getStatus() == 0).count();
         model.addAttribute("unreadCount", count);
         model.addAttribute("notifications", notificationDtos);

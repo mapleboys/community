@@ -3,12 +3,14 @@ package com.example.communication.provider;
 import com.alibaba.fastjson.JSON;
 import com.example.communication.dto.AccessTokenDto;
 import com.example.communication.dto.GithubUser;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
 
 
 @Component
+@Slf4j
 public class GitHubProvider {
     public String getAccessToken(AccessTokenDto accessTokenDto) {
         MediaType mediaType = MediaType.get("application/json; charset=utf-8");
@@ -23,8 +25,8 @@ public class GitHubProvider {
             String[] split = str.split("&");
             String[] tokenStr = split[0].split("=");
             String accessToken = tokenStr[1];
-            System.out.println("return string:" + str);
-            System.out.println("accessToken:" + accessToken);
+            log.info("return string:" + str);
+            log.info("accessToken:" + accessToken);
             return accessToken;
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,9 +43,9 @@ public class GitHubProvider {
         try{
             Response response = client.newCall(request).execute();
             String str = response.body().string();
-            System.out.println("str:" + str);
+            log.info("str:" + str);
             GithubUser githubUser = JSON.parseObject(str, GithubUser.class);
-            System.out.println("githubUser：" + githubUser);
+            log.info("githubUser：" + githubUser);
             return githubUser;
         } catch (Exception e){
             e.printStackTrace();

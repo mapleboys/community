@@ -11,6 +11,7 @@ import com.example.communication.model.Comment;
 import com.example.communication.model.User;
 import com.example.communication.service.CommentService;
 import com.example.communication.service.NotifyService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
+@Slf4j
 public class CommentController {
     @Autowired
     CommentService commentService;
@@ -30,7 +32,7 @@ public class CommentController {
     @ResponseBody
     @PostMapping("/comment")
     public Object comment(@RequestBody CommentCreateDto commentDto, HttpServletRequest request) {
-        System.out.println("调用comment接口");
+        log.info("调用comment接口");
         // 评论功能
         Comment comment = new Comment();
         if (request.getSession().getAttribute("user") == null) {
@@ -72,10 +74,10 @@ public class CommentController {
     @GetMapping("/comment/{id}")
     public Object commentList(@PathVariable(name = "id") Long id,
                               HttpServletRequest request) {
-        System.out.println("调用comment二级评论接口");
+        log.info("调用comment二级评论接口");
         // 查询评论列表
         List<CommentDto> subCommentDtos = commentService.list(id, CommentTypeEnum.COMMENT);
-        System.out.println("subComentDtos:" + subCommentDtos);
+        log.info("subComentDtos:" + subCommentDtos);
         ResultDto resultDto = ResultDto.okOf(subCommentDtos);
         return resultDto;
 
