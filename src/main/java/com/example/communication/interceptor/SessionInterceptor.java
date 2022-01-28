@@ -4,6 +4,7 @@ import com.example.communication.mapper.UserMapper;
 import com.example.communication.model.User;
 import com.example.communication.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,9 +19,12 @@ import java.util.List;
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired(required = false)
     UserMapper userMapper;
+    @Value("${github.redirect.uri}")
+    private String githubRedirectUri;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        request.getServletContext().setAttribute("githubRedirectUri", githubRedirectUri);
         Cookie[] cookies = request.getCookies();
         System.out.println("判断000");
         // 判断是否存在token，存在则直接返回用户信息，否则进入登录界面

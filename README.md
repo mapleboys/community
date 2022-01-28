@@ -101,3 +101,19 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```bash
 mvn flyway:migrate
 ```
+3. 运行打包命令，生成可执行 jar 文件
+```sh
+mvn package -DskipTests
+```
+4. 运行项目  
+```sh
+java -jar target/community-0.0.1-SNAPSHOT.jar
+```
+如果是线上部署，可以增加配置文件(production.properties)，同时运行命令修改如下
+```sh
+java -jar -Dspring.profiles.active=production target/community-0.0.1-SNAPSHOT.jar
+```
+5. 访问项目
+```
+http://localhost:8887
+```
