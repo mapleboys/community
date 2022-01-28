@@ -1,0 +1,23 @@
+2022-01-28 15:41:43.680  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 134708 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-01-28 15:41:43.682  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-01-28 15:41:43.752  INFO 134708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-28 15:41:43.752  INFO 134708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-28 15:41:45.732  INFO 134708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-01-28 15:41:45.750  INFO 134708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-28 15:41:45.750  INFO 134708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-28 15:41:45.886  INFO 134708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-28 15:41:45.887  INFO 134708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2134 ms
+2022-01-28 15:41:46.994  INFO 134708 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-28 15:41:47.243  INFO 134708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-28 15:41:48.009  INFO 134708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-28 15:41:48.048  INFO 134708 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
+2022-01-28 15:41:48.049  INFO 134708 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
+2022-01-28 15:41:48.109  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.029s)
+2022-01-28 15:41:48.126  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
+2022-01-28 15:41:48.127  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2022-01-28 15:41:48.348  INFO 134708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-28 15:41:48.381  INFO 134708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2022-01-28 15:41:48.392  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 5.265 seconds (JVM running for 5.975)
+2022-01-28 15:43:19.284  INFO 134708 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-28 15:43:19.284  INFO 134708 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-28 15:43:19.285  INFO 134708 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
