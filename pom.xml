@@ -26,9 +26,7 @@
 				<db.password>rootroot</db.password>
 				<db.version>8.0.27</db.version>
 			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
+
 		</profile>
 		<profile>
 			<id>prod</id>
@@ -38,6 +36,9 @@
 				<db.password>Rootroot123!</db.password>
 				<db.version>8.0.28</db.version>
 			</properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
 		</profile>
 	</profiles>
 
