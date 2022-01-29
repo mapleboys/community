@@ -1,375 +1,185 @@
-2022-01-28 15:41:43.680  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 134708 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 15:41:43.682  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 15:41:43.752  INFO 134708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 15:41:43.752  INFO 134708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 15:41:45.732  INFO 134708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 15:41:45.750  INFO 134708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 15:41:45.750  INFO 134708 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 15:41:45.886  INFO 134708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 15:41:45.887  INFO 134708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2134 ms
-2022-01-28 15:41:46.994  INFO 134708 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 15:41:47.243  INFO 134708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 15:41:48.009  INFO 134708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 15:41:48.048  INFO 134708 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 15:41:48.049  INFO 134708 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 15:41:48.109  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.029s)
-2022-01-28 15:41:48.126  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 15:41:48.127  INFO 134708 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 15:41:48.348  INFO 134708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 15:41:48.381  INFO 134708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 15:41:48.392  INFO 134708 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 5.265 seconds (JVM running for 5.975)
-2022-01-28 15:43:19.284  INFO 134708 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 15:43:19.284  INFO 134708 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 15:43:19.285  INFO 134708 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-28 16:39:50.796  INFO 122748 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 122748 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 16:39:50.797  INFO 122748 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 16:39:50.858  INFO 122748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 16:39:50.858  INFO 122748 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 16:39:52.728  INFO 122748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 16:39:52.743  INFO 122748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 16:39:52.743  INFO 122748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 16:39:52.847  INFO 122748 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 16:39:52.848  INFO 122748 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1989 ms
-2022-01-28 16:39:53.801  INFO 122748 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 16:39:54.069  INFO 122748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 16:39:54.751  INFO 122748 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 16:39:54.797  INFO 122748 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 16:39:54.798  INFO 122748 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 16:39:54.855  INFO 122748 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.027s)
-2022-01-28 16:39:54.872  INFO 122748 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 16:39:54.873  INFO 122748 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 16:39:55.095  INFO 122748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 16:39:55.135  INFO 122748 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 16:39:55.146  INFO 122748 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.88 seconds (JVM running for 5.525)
-2022-01-28 16:39:55.433  INFO 122748 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 16:39:55.433  INFO 122748 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 16:39:55.434  INFO 122748 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-28 17:13:29.048  INFO 136248 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 136248 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:13:29.050  INFO 136248 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:13:29.113  INFO 136248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 17:13:29.113  INFO 136248 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 17:13:30.732  INFO 136248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:13:30.746  INFO 136248 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:13:30.746  INFO 136248 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:13:30.854  INFO 136248 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:13:30.854  INFO 136248 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1740 ms
-2022-01-28 17:13:31.750  INFO 136248 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:13:32.004  INFO 136248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 17:13:32.677  INFO 136248 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 17:13:32.729  INFO 136248 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:13:32.729  INFO 136248 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:13:32.805  INFO 136248 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.036s)
-2022-01-28 17:13:32.820  INFO 136248 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:13:32.822  INFO 136248 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:13:33.035  INFO 136248 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:13:33.064  INFO 136248 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:13:33.074  INFO 136248 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.5 seconds (JVM running for 5.077)
-2022-01-28 17:13:33.306  INFO 136248 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 17:13:33.306  INFO 136248 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 17:13:33.307  INFO 136248 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-28 17:13:33.329  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:33.435  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@2dc1d75b), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@57adb3a4), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@20eb9efa), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@719ac87c), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@52c2b21b)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:13:33.873  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:33.873  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:33.873  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:33.905  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:33.937  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.691  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.714  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@12520f4e), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@59abb6e7), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@5a086f6d), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@30cfe90b), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@3265a823)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:13:40.813  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.813  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.813  INFO 136248 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.813  INFO 136248 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:40.889  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:43.933  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:43.951  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@3f8fdd0b), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@3e33d8af), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@5833fecf), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@353a6433), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@749c801a)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:13:44.032  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:44.032  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:44.032  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:44.032  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:13:44.111  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.165  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.187  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@7eb24576), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@5dcba0c9), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@331c5a8c), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@5fb04d64), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@33452a11)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:14:35.275  INFO 136248 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.277  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.277  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.277  INFO 136248 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.988  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.996  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.996  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:35.996  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:36.067  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.781  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.850 ERROR 136248 --- [http-nio-8887-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
-### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5' at line 5
-### The error may exist in file [D:\workplace\communication\target\classes\mapper\QuestionExtMapper.xml]
-### The error may involve com.example.communication.mapper.QuestionExtMapper.queryBySearch-Inline
-### The error occurred while setting parameters
-### SQL: select * from question             where title REGEXP ?           limit ? offset ?
-### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5' at line 5
-; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5' at line 5] with root cause
+2022-01-29 08:33:00.940  WARN 135664 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h56m15s440ms439µs200ns).
+2022-01-29 08:46:04.837  INFO 135664 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-01-29 08:46:04.849  INFO 135664 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-01-29 08:46:05.035  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 135664 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-01-29 08:46:05.036  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-01-29 08:46:05.640  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-01-29 08:46:05.641  INFO 135664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-29 08:46:05.641  INFO 135664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-29 08:46:05.972  INFO 135664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-29 08:46:05.972  INFO 135664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 931 ms
+2022-01-29 08:46:06.262  INFO 135664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-29 08:46:06.320  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-01-29 08:46:06.343  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-01-29 08:46:06.346  INFO 135664 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
+2022-01-29 08:46:06.346  INFO 135664 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
+2022-01-29 08:46:06.379  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.018s)
+2022-01-29 08:46:06.389  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
+2022-01-29 08:46:06.390  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2022-01-29 08:46:06.427  INFO 135664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-29 08:46:06.437  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2022-01-29 08:46:06.442  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 1.466 seconds (JVM running for 55136.33)
+2022-01-29 08:46:06.444  INFO 135664 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-01-29 08:46:13.619  INFO 135664 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-01-29 08:46:13.627  INFO 135664 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-01-29 08:46:13.759  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 135664 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-01-29 08:46:13.760  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-01-29 08:46:14.001  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-01-29 08:46:14.001  INFO 135664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-29 08:46:14.001  INFO 135664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-29 08:46:14.023  INFO 135664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-29 08:46:14.023  INFO 135664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 260 ms
+2022-01-29 08:46:14.205  INFO 135664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-29 08:46:14.233  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-01-29 08:46:14.253  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-01-29 08:46:14.255  INFO 135664 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
+2022-01-29 08:46:14.256  INFO 135664 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
+2022-01-29 08:46:14.278  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.011s)
+2022-01-29 08:46:14.287  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
+2022-01-29 08:46:14.288  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2022-01-29 08:46:14.307  INFO 135664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-29 08:46:14.312  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2022-01-29 08:46:14.316  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 0.584 seconds (JVM running for 55144.204)
+2022-01-29 08:46:14.317  INFO 135664 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-01-29 08:46:30.280  INFO 135664 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-01-29 08:46:30.292  INFO 135664 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-01-29 08:46:30.462  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 135664 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-01-29 08:46:30.462  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-01-29 08:46:30.657  WARN 135664 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.communication.mapper]' package. Please check your configuration.
+2022-01-29 08:46:30.714  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-01-29 08:46:30.715  INFO 135664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-29 08:46:30.715  INFO 135664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-29 08:46:30.744  INFO 135664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-29 08:46:30.745  INFO 135664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 280 ms
+2022-01-29 08:46:30.800  INFO 135664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-29 08:46:30.849  WARN 135664 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+2022-01-29 08:46:30.850  INFO 135664 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-01-29 08:46:30.857  INFO 135664 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5' at line 5
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:371) ~[mysql-connector-java-8.0.28.jar:8.0.28]
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-4.0.3.jar:na]
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:na]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.9.jar:3.5.9]
-	at sun.reflect.GeneratedMethodAccessor47.invoke(Unknown Source) ~[na:na]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_152]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_152]
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at com.sun.proxy.$Proxy63.selectList(Unknown Source) ~[na:na]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
-	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145) ~[mybatis-3.5.9.jar:3.5.9]
-	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) ~[mybatis-3.5.9.jar:3.5.9]
-	at com.sun.proxy.$Proxy69.queryBySearch(Unknown Source) ~[na:na]
-	at com.example.communication.service.QuestionDtoService.list(QuestionDtoService.java:59) ~[classes/:na]
-	at com.example.communication.controller.HelloController.hello(HelloController.java:35) ~[classes/:na]
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-01-29 08:46:30.899 ERROR 135664 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) [spring-boot-2.6.1.jar:2.6.1]
+	at com.example.communication.CommunicationApplication.main(CommunicationApplication.java:24) [classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_152]
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_152]
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_152]
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_152]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.55.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.13.jar:5.3.13]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.55.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.13.jar:5.3.13]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.55.jar:9.0.55]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_152]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.6.1.jar:2.6.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.13.jar:5.3.13]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.13.jar:5.3.13]
+	... 24 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:613) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:491) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:633) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:179) ~[mybatis-spring-boot-autoconfigure-2.2.1.jar:2.2.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23340091.CGLIB$sqlSessionFactory$1(<generated>) ~[mybatis-spring-boot-autoconfigure-2.2.1.jar:2.2.1]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23340091$$FastClassBySpringCGLIB$$fcbe42a8.invoke(<generated>) ~[mybatis-spring-boot-autoconfigure-2.2.1.jar:2.2.1]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$23340091.sqlSessionFactory(<generated>) ~[mybatis-spring-boot-autoconfigure-2.2.1.jar:2.2.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_152]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_152]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_152]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_152]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.13.jar:5.3.13]
+	... 25 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\workplace\communication\target\classes\mapper\CommentExtMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:95) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:611) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	... 38 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:263) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:254) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:246) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:119) ~[mybatis-3.5.9.jar:3.5.9]
+	... 40 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.communication.model.Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.5.9.jar:3.5.9]
+	... 44 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.example.communication.model.Comment
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:196) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.5.9.jar:3.5.9]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.5.9.jar:3.5.9]
+	... 46 common frames omitted
 
-2022-01-28 17:14:43.854  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.876  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.877  INFO 136248 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.877  INFO 136248 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:14:43.878  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:04.385  INFO 136248 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:04.385  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:04.385  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:04.385  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:04.417  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.671  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.683  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@7afdae9b), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@66061243), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@6ded62d5), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@148645e7), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@398b89a)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:16:08.722  INFO 136248 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.722  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.722  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.722  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:08.753  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.316  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.327  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=28, title=图片测试标题, description=![](https://communitybbs.cn-bj.ufileos.com/f58ae205-2482-40c7-b3f7-3c9db6310694jpg?UCloudPublicKey=TOKEN_4c2dea10-34c1-4a20-9ac9-4aeb6620ac40&Signature=F%2Ffckqd%2FEQSxY9UvMxHAVnFTefU%3D&Expires=1645816780)
-发一个带图片的, gmtCreate=1643188815130, gmtModified=1643188815130, creator=22, commentAccount=0, viewAccount=4, likeAccount=0, tag=java, user=com.example.communication.model.User@71653235), QuestionDto(id=29, title=测试多用户发布标题, description=测试, gmtCreate=1643247218976, gmtModified=1643247218976, creator=23, commentAccount=0, viewAccount=3, likeAccount=0, tag=javascript, user=com.example.communication.model.User@50beafac)], showPreviousPage=true, showNextPage=false, showEndPage=false, showFirstPage=true, pageList=[2, 3, 4], currentPage=4, totalPage=4)
-2022-01-28 17:16:11.361  INFO 136248 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.362  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.364  INFO 136248 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.364  INFO 136248 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:11.398  INFO 136248 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.863  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.871  INFO 136248 --- [http-nio-8887-exec-10] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=28, title=图片测试标题, description=![](https://communitybbs.cn-bj.ufileos.com/f58ae205-2482-40c7-b3f7-3c9db6310694jpg?UCloudPublicKey=TOKEN_4c2dea10-34c1-4a20-9ac9-4aeb6620ac40&Signature=F%2Ffckqd%2FEQSxY9UvMxHAVnFTefU%3D&Expires=1645816780)
-发一个带图片的, gmtCreate=1643188815130, gmtModified=1643188815130, creator=22, commentAccount=0, viewAccount=4, likeAccount=0, tag=java, user=com.example.communication.model.User@70e65cbb)], showPreviousPage=false, showNextPage=false, showEndPage=false, showFirstPage=false, pageList=[1], currentPage=1, totalPage=1)
-2022-01-28 17:16:14.897  INFO 136248 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.897  INFO 136248 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.897  INFO 136248 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.897  INFO 136248 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:16:14.927  INFO 136248 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:05.226  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 125560 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:21:05.227  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:21:05.294  INFO 125560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 17:21:05.295  INFO 125560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 17:21:07.139  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:21:07.156  INFO 125560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:21:07.156  INFO 125560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:21:07.269  INFO 125560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:21:07.270  INFO 125560 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1975 ms
-2022-01-28 17:21:08.206  INFO 125560 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:21:08.462  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 17:21:09.134  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 17:21:09.174  INFO 125560 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:21:09.174  INFO 125560 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:21:09.229  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.026s)
-2022-01-28 17:21:09.244  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:21:09.245  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:21:09.436  INFO 125560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:21:09.469  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:21:09.481  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.711 seconds (JVM running for 5.281)
-2022-01-28 17:21:41.683  INFO 125560 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 17:21:41.683  INFO 125560 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 17:21:41.684  INFO 125560 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-28 17:21:41.705  INFO 125560 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:41.813  INFO 125560 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@7560ce73), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@39014b49), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@23ce9420), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@632f1451), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@104f5d11)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
-2022-01-28 17:21:42.174  INFO 125560 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.174  INFO 125560 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.174  INFO 125560 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.174  INFO 125560 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.199  INFO 125560 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.199  INFO 125560 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.199  INFO 125560 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.199  INFO 125560 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:42.241  INFO 125560 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.899  INFO 125560 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.907  INFO 125560 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[], showPreviousPage=false, showNextPage=true, showEndPage=false, showFirstPage=false, pageList=[0, 1], currentPage=0, totalPage=1)
-2022-01-28 17:21:44.937  INFO 125560 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.948  INFO 125560 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.949  INFO 125560 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.949  INFO 125560 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:21:44.972  INFO 125560 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:25:11.638  INFO 125560 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-01-28 17:25:11.647  INFO 125560 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-01-28 17:25:11.805  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 125560 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:25:11.805  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:25:12.397  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:25:12.398  INFO 125560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:25:12.399  INFO 125560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:25:12.443  INFO 125560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:25:12.443  INFO 125560 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 635 ms
-2022-01-28 17:25:12.947  INFO 125560 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:25:13.009  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2022-01-28 17:25:13.033  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2022-01-28 17:25:13.036  INFO 125560 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:25:13.036  INFO 125560 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:25:13.081  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.020s)
-2022-01-28 17:25:13.098  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:25:13.100  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:25:13.148  INFO 125560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:25:13.160  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:25:13.165  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 1.406 seconds (JVM running for 248.966)
-2022-01-28 17:25:13.170  INFO 125560 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2022-01-28 17:25:14.941  INFO 125560 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2022-01-28 17:25:14.949  INFO 125560 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2022-01-28 17:25:15.095  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 125560 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:25:15.095  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:25:15.450  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:25:15.450  INFO 125560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:25:15.451  INFO 125560 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:25:15.475  INFO 125560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:25:15.475  INFO 125560 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
-2022-01-28 17:25:15.695  INFO 125560 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:25:15.730  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2022-01-28 17:25:15.750  INFO 125560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2022-01-28 17:25:15.751  INFO 125560 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:25:15.752  INFO 125560 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:25:15.779  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.013s)
-2022-01-28 17:25:15.788  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:25:15.789  INFO 125560 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:25:15.812  INFO 125560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:25:15.818  INFO 125560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:25:15.821  INFO 125560 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 0.757 seconds (JVM running for 251.622)
-2022-01-28 17:25:15.822  INFO 125560 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2022-01-28 17:26:33.289  INFO 129516 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 129516 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:26:33.290  INFO 129516 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:26:33.360  INFO 129516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 17:26:33.360  INFO 129516 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 17:26:35.042  INFO 129516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:26:35.056  INFO 129516 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:26:35.057  INFO 129516 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:26:35.159  INFO 129516 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:26:35.160  INFO 129516 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1799 ms
-2022-01-28 17:26:36.049  INFO 129516 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:26:36.295  INFO 129516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 17:26:36.929  INFO 129516 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 17:26:36.967  INFO 129516 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:26:36.967  INFO 129516 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:26:37.026  INFO 129516 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.029s)
-2022-01-28 17:26:37.039  INFO 129516 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:26:37.040  INFO 129516 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:26:37.258  INFO 129516 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:26:37.286  INFO 129516 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:26:37.295  INFO 129516 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.48 seconds (JVM running for 5.037)
-2022-01-28 17:26:50.939  INFO 129516 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 17:26:50.939  INFO 129516 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 17:26:50.940  INFO 129516 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-01-28 17:26:50.961  INFO 129516 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:51.055  INFO 129516 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[], showPreviousPage=false, showNextPage=true, showEndPage=false, showFirstPage=false, pageList=[1, 0, 1], currentPage=1, totalPage=1)
-2022-01-28 17:26:51.392  INFO 129516 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:51.392  INFO 129516 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:51.392  INFO 129516 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:51.392  INFO 129516 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:51.437  INFO 129516 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.401  INFO 129516 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.407  INFO 129516 --- [http-nio-8887-exec-7] c.e.c.controller.HelloController         : PaginationDto(questionList=[], showPreviousPage=false, showNextPage=true, showEndPage=false, showFirstPage=false, pageList=[1, 0, 1], currentPage=1, totalPage=1)
-2022-01-28 17:26:53.435  INFO 129516 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.435  INFO 129516 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.435  INFO 129516 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.435  INFO 129516 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:26:53.465  INFO 129516 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:11.422  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 135664 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
-2022-01-28 17:27:11.424  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
-2022-01-28 17:27:11.489  INFO 135664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-01-28 17:27:11.489  INFO 135664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-01-28 17:27:13.258  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2022-01-28 17:27:13.274  INFO 135664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-01-28 17:27:13.274  INFO 135664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
-2022-01-28 17:27:13.405  INFO 135664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-01-28 17:27:13.405  INFO 135664 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1915 ms
-2022-01-28 17:27:14.358  INFO 135664 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-01-28 17:27:14.630  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-28 17:27:15.300  INFO 135664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-28 17:27:15.339  INFO 135664 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
-2022-01-28 17:27:15.339  INFO 135664 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
-2022-01-28 17:27:15.394  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.026s)
-2022-01-28 17:27:15.406  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
-2022-01-28 17:27:15.408  INFO 135664 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2022-01-28 17:27:15.608  INFO 135664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-01-28 17:27:15.639  INFO 135664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2022-01-28 17:27:15.650  INFO 135664 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.733 seconds (JVM running for 5.395)
-2022-01-28 17:27:15.710  INFO 135664 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-01-28 17:27:15.710  INFO 135664 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-01-28 17:27:15.711  INFO 135664 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-01-28 17:27:15.734  INFO 135664 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:15.816  INFO 135664 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[], showPreviousPage=false, showNextPage=false, showEndPage=false, showFirstPage=false, pageList=[1], currentPage=1, totalPage=1)
-2022-01-28 17:27:16.137  INFO 135664 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:16.137  INFO 135664 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:16.137  INFO 135664 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:16.137  INFO 135664 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
-2022-01-28 17:27:16.182  INFO 135664 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:06.395  INFO 132552 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 132552 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-01-29 08:50:06.396  INFO 132552 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-01-29 08:50:06.451  INFO 132552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-01-29 08:50:06.452  INFO 132552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-01-29 08:50:07.974  INFO 132552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-01-29 08:50:07.985  INFO 132552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-29 08:50:07.985  INFO 132552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-01-29 08:50:08.093  INFO 132552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-29 08:50:08.093  INFO 132552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1641 ms
+2022-01-29 08:50:08.961  INFO 132552 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-01-29 08:50:09.197  INFO 132552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-29 08:50:09.906  INFO 132552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-29 08:50:09.945  INFO 132552 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
+2022-01-29 08:50:09.945  INFO 132552 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
+2022-01-29 08:50:10.000  INFO 132552 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.028s)
+2022-01-29 08:50:10.011  INFO 132552 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
+2022-01-29 08:50:10.013  INFO 132552 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2022-01-29 08:50:10.204  INFO 132552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-01-29 08:50:10.237  INFO 132552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2022-01-29 08:50:10.248  INFO 132552 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.339 seconds (JVM running for 4.952)
+2022-01-29 08:50:27.929  INFO 132552 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-29 08:50:27.929  INFO 132552 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-29 08:50:27.930  INFO 132552 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-01-29 08:50:27.951  INFO 132552 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:28.052  INFO 132552 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@35d0d04d), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@cf6efc4), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@3f94774e), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@762b0cbe), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@45cae88e)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
+2022-01-29 08:50:28.379  INFO 132552 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:28.379  INFO 132552 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:28.379  INFO 132552 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:28.379  INFO 132552 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:29.672  INFO 132552 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:29.672  INFO 132552 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:29.672  INFO 132552 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:29.672  INFO 132552 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:29.760  INFO 132552 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.631  INFO 132552 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.649  INFO 132552 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=13, title=标题测试数据, description=内容补充测试, gmtCreate=1640918999254, gmtModified=1640918999254, creator=22, commentAccount=2, viewAccount=34, likeAccount=0, tag=标签测试1, user=com.example.communication.model.User@30d5ccc0), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@4d90f2e1), QuestionDto(id=15, title=测试标题3, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=12, likeAccount=0, tag=生活, user=com.example.communication.model.User@111fd536), QuestionDto(id=16, title=测试标题4, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=1, viewAccount=8, likeAccount=0, tag=生活, user=com.example.communication.model.User@1293150), QuestionDto(id=17, title=测试标题5, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@1f845e79)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
+2022-01-29 08:50:32.679  INFO 132552 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.679  INFO 132552 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.679  INFO 132552 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.680  INFO 132552 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:32.709  INFO 132552 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.121  INFO 132552 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.153  INFO 132552 --- [http-nio-8887-exec-7] c.e.c.controller.QuestionController      : comentDtos:[CommentDto(id=1, parentId=13, type=0, commentator=22, gmtCreate=1643081598876, gmtModified=1643081598876, likeCount=0, content=哈哈哈, commentCount=0, user=com.example.communication.model.User@244de126), CommentDto(id=2, parentId=13, type=0, commentator=22, gmtCreate=1643081606813, gmtModified=1643081606813, likeCount=0, content=二级肌活, commentCount=1, user=com.example.communication.model.User@244de126)]
+2022-01-29 08:50:34.188  INFO 132552 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.188  INFO 132552 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.188  INFO 132552 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.192  INFO 132552 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.193  INFO 132552 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.193  INFO 132552 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.197  INFO 132552 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.205  INFO 132552 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.205  INFO 132552 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.206  INFO 132552 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-01-29 08:50:34.248  INFO 132552 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000

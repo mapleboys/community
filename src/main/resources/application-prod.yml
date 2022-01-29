@@ -12,7 +12,7 @@ github:
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/community
+    url: jdbc:mysql://127.0.0.1:3306/community?socketTimeout=60000&connectTimeout=30000&serverTimezone=UTC
     username: root
     password: Rootroot123!
 
