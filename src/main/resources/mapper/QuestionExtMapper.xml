@@ -62,6 +62,7 @@
     <if test="search != null">
       where title REGEXP #{search}
     </if>
+    order by gmt_modified desc
     limit #{limit} offset #{offset}
   </select>
 

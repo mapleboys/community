@@ -107,7 +107,7 @@ mvn package -DskipTests
 ```
 4. 运行项目  
 ```sh
-java -jar target/community-0.0.1-SNAPSHOT.jar
+nohup java -jar target/communication-0.0.1-SNAPSHOT.jar >./logs/my.log  2>&1 &
 ```
 如果是线上部署，可以增加配置文件(production.properties)，同时运行命令修改如下
 ```sh
