@@ -216,3 +216,58 @@ public interface QuestionExtMapper {
 2022-02-09 17:31:18.627  INFO 11024 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2022-02-09 17:31:18.659  INFO 11024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
 2022-02-09 17:31:18.671  INFO 11024 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.993 seconds (JVM running for 5.567)
+2022-02-09 17:32:34.413  INFO 18264 --- [restartedMain] c.e.c.CommunicationApplication           : Starting CommunicationApplication using Java 1.8.0_152 on LAPTOP-RHARORTS with PID 18264 (D:\workplace\communication\target\classes started by linwa in D:\workplace\communication)
+2022-02-09 17:32:34.414  INFO 18264 --- [restartedMain] c.e.c.CommunicationApplication           : The following profiles are active: dev
+2022-02-09 17:32:34.476  INFO 18264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-09 17:32:34.476  INFO 18264 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-09 17:32:35.924  INFO 18264 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2022-02-09 17:32:35.938  INFO 18264 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-09 17:32:35.939  INFO 18264 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2022-02-09 17:32:36.023  INFO 18264 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-09 17:32:36.023  INFO 18264 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1546 ms
+2022-02-09 17:32:36.918  INFO 18264 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-09 17:32:37.168  INFO 18264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-09 17:32:37.814  INFO 18264 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-09 17:32:37.859  INFO 18264 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 8.0.4 by Redgate
+2022-02-09 17:32:37.859  INFO 18264 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://127.0.0.1:3306/community (MySQL 8.0)
+2022-02-09 17:32:37.919  INFO 18264 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.029s)
+2022-02-09 17:32:37.934  INFO 18264 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 11
+2022-02-09 17:32:37.935  INFO 18264 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2022-02-09 17:32:38.116  INFO 18264 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-09 17:32:38.144  INFO 18264 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2022-02-09 17:32:38.154  INFO 18264 --- [restartedMain] c.e.c.CommunicationApplication           : Started CommunicationApplication in 4.183 seconds (JVM running for 4.699)
+2022-02-09 17:32:54.461  INFO 18264 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-09 17:32:54.461  INFO 18264 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-09 17:32:54.461  INFO 18264 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-09 17:32:54.476  INFO 18264 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.567  INFO 18264 --- [http-nio-8887-exec-1] c.e.c.controller.HelloController         : PaginationDto(questionList=[QuestionDto(id=30, title=上传一个图片试试, description=![](https://communitybbs.cn-bj.ufileos.com/1877ad4c-6b4c-4fa7-a819-55305c0ef225.jpg?UCloudPublicKey=TOKEN_4c2dea10-34c1-4a20-9ac9-4aeb6620ac40&Signature=72Juk8COPstT912bK85w9owTxyI%3D&Expires=1645990576)
+一个二维码, gmtCreate=1643362590685, gmtModified=1643362590685, creator=22, commentAccount=0, viewAccount=2, likeAccount=0, tag=scala, user=com.example.communication.model.User@1673b6a1), QuestionDto(id=29, title=测试多用户发布标题, description=测试, gmtCreate=1643247218976, gmtModified=1643247218976, creator=23, commentAccount=0, viewAccount=3, likeAccount=0, tag=javascript, user=com.example.communication.model.User@49934230), QuestionDto(id=28, title=图片测试标题, description=![](https://communitybbs.cn-bj.ufileos.com/f58ae205-2482-40c7-b3f7-3c9db6310694jpg?UCloudPublicKey=TOKEN_4c2dea10-34c1-4a20-9ac9-4aeb6620ac40&Signature=F%2Ffckqd%2FEQSxY9UvMxHAVnFTefU%3D&Expires=1645816780)
+发一个带图片的, gmtCreate=1643188815130, gmtModified=1643188815130, creator=22, commentAccount=0, viewAccount=4, likeAccount=0, tag=java, user=com.example.communication.model.User@4d8e25e7), QuestionDto(id=27, title=测试编辑器, description=```java
+public interface QuestionExtMapper {
+    int incView(Question record);
+    int incComment(Question record);
+    List<Question> queryRelativeQuestion(Question record);
+}
+```, gmtCreate=1643160144322, gmtModified=1643160144324, creator=22, commentAccount=0, viewAccount=18, likeAccount=0, tag=java, user=com.example.communication.model.User@1036d2fd), QuestionDto(id=14, title=测试标题2, description=问题补充问题补充一下, gmtCreate=1640919465083, gmtModified=1640919465083, creator=22, commentAccount=0, viewAccount=0, likeAccount=0, tag=生活, user=com.example.communication.model.User@1bfbb8e4)], showPreviousPage=false, showNextPage=true, showEndPage=true, showFirstPage=false, pageList=[1, 2, 3], currentPage=1, totalPage=4)
+2022-02-09 17:32:54.921  INFO 18264 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.921  INFO 18264 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.921  INFO 18264 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.921  INFO 18264 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.943  INFO 18264 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.943  INFO 18264 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.944  INFO 18264 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:54.944  INFO 18264 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:55.021  INFO 18264 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.795  INFO 18264 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.822  INFO 18264 --- [http-nio-8887-exec-1] c.e.c.controller.QuestionController      : comentDtos:[]
+2022-02-09 17:32:56.878  INFO 18264 --- [http-nio-8887-exec-3] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.878  INFO 18264 --- [http-nio-8887-exec-4] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.879  INFO 18264 --- [http-nio-8887-exec-2] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.879  INFO 18264 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.879  INFO 18264 --- [http-nio-8887-exec-8] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.879  INFO 18264 --- [http-nio-8887-exec-6] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.893  INFO 18264 --- [http-nio-8887-exec-9] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.893  INFO 18264 --- [http-nio-8887-exec-1] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.893  INFO 18264 --- [http-nio-8887-exec-7] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.893  INFO 18264 --- [http-nio-8887-exec-10] c.e.c.interceptor.SessionInterceptor     : 判断000
+2022-02-09 17:32:56.943  INFO 18264 --- [http-nio-8887-exec-5] c.e.c.interceptor.SessionInterceptor     : 判断000

@@ -8,7 +8,7 @@ github:
     id: 2bcd63e763491ab33831
     secret: 5fe5be9b000bb422d77c9c769921ed3290778093
   redirect:
-    uri: http://117.50.177.50:8887/callback
+    uri: http://117.50.174.21:8887/callback
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
