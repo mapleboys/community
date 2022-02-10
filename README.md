@@ -33,7 +33,7 @@
 
 [jquery]https://code.jquery.com/jquery-3.6.0.min.js
 
-[spring MVC]tps://docs.spring.io/spring-framework/docs/current/reference/html/web.html
+[spring MVC]https://docs.spring.io/spring-framework/docs/current/reference/html/web.html
 
 [mybatis generator]http://mybatis.org/generator/configreference/table.html
 
@@ -44,6 +44,8 @@
 [ucloud对象存储api]https://github.com/ucloud/ufile-sdk-java
 
 [markdown editor]https://github.com/pandao/editor.md
+
+[springboot定时任务]https://spring.io/guides/gs/scheduling-tasks/
 
 [调整日志为debug级别]
 1. 配置所有包下日志为DEBUG级别
@@ -57,7 +59,10 @@ logging.level.你的包名.你的包名.你的包名=DEBUG
 logging.level.com.baidu=DEBUG
 
 ## 注意事项
+```text
 redirect 跳转到路径地址
+Spring 的定时任务默认是单线程执行
+```
 
 ## 错误解决
 [降低flyway版本]org.flywaydb.core.api.FlywayException: No database found to handle jdbc:mysql
@@ -72,6 +77,7 @@ redirect 跳转到路径地址
 处理办法：删除main中的标注
 参考：https://blog.csdn.net/lv_dw962464/article/details/84891078
 ```
+
 
 [全局exception拦截]
 ```text

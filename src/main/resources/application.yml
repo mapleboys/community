@@ -23,7 +23,25 @@ spring:
     clean-on-validation-error: true
   profiles:
     active: dev #激活生产环境配置
-
+  task:
+    scheduling:
+      pool:
+        size: 4 # 任务调度线程池大小 默认 1 建议根据任务加大
+      thread-name-prefix: scheduling-  # 调度线程名称前缀 默认 scheduling-
+      shutdown:
+        await-termination: true # 线程池关闭时等待所有任务完成
+        await-termination-period: 100s  # 调度线程关闭前最大等待时间，确保最后一定关闭
+    execution:
+      pool:
+        allow-core-thread-timeout: true  # 是否允许核心线程超时。这样可以动态增加和缩小线程池
+        core-size: 8   #核心线程池大小 默认 8
+        keep-alive: 60s   # 线程空闲等待时间 默认 60s
+        max-size: 20 # 线程池最大数20  根据任务定制
+        queue-capacity: 100 #  线程池 队列容量大小
+        shutdown:
+          await-termination: true # 线程池关闭时等待所有任务完成
+          await-termination-period: 100s # 执行线程关闭前最大等待时间，确保最后一定关闭
+        thread-name-prefix: task- # 线程名称前缀
 mybatis:
   type-aliases-package: com.example.communication.model
   mapper-locations: classpath:mapper/*.xml
@@ -46,3 +64,6 @@ logging:
     max-size: 100MB
   level:
     root: info
+
+# 任务调度线程池
+
