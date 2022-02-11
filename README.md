@@ -123,3 +123,9 @@ java -jar -Dspring.profiles.active=production target/community-0.0.1-SNAPSHOT.ja
 ```
 http://localhost:8887
 ```
+6. git远程分支覆盖本地分支
+```shell script
+git fetch --all
+git reset --hard origin/master (这里master要修改为对应的分支名)
+git pull
+```
