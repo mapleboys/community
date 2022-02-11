@@ -1,5 +1,6 @@
 package com.example.communication.controller;
 
+import com.example.communication.cache.TopNTagCache;
 import com.example.communication.dto.PaginationDto;
 import com.example.communication.mapper.NotificationMapper;
 import com.example.communication.model.Notification;
@@ -45,6 +46,9 @@ public class HelloController {
             Long size = notifications.stream().filter(t->t.getStatus()==0).count();
             model.addAttribute("unreadCount", size);
         }
+        // 传入热门话题
+        model.addAttribute("topNTags", TopNTagCache.topNTags);
+
         return "index";
     }
 }
