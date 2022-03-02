@@ -129,3 +129,10 @@ git fetch --all
 git reset --hard origin/master (这里master要修改为对应的分支名)
 git pull
 ```
+7. nginx启停命令
+```text
+systemctl status nginx
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+```
